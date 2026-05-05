@@ -553,6 +553,40 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
 .prevention-check { flex-shrink: 0; margin-top: 3px; }
 .prevention-text { font-size: 14px; color: var(--on-mid-muted); line-height: 1.55; }
 
+/* ─── REGISTRATION MODAL ──────────────────────────────────── */
+.reg-modal-overlay { position: fixed; inset: 0; background: var(--modal-bg); z-index: 900; display: flex; align-items: center; justify-content: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+.reg-modal-overlay.open { opacity: 1; pointer-events: auto; }
+.reg-modal { background: var(--bg-primary); border: 1px solid var(--on-primary-rule); max-width: 540px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; }
+.reg-modal-head { padding: 28px 32px 24px; border-bottom: 1px solid var(--on-primary-rule); display: flex; justify-content: space-between; align-items: flex-start; }
+.reg-modal-title { font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--on-primary); letter-spacing: -0.02em; line-height: 1.2; }
+.reg-modal-title strong { font-weight: 700; }
+.reg-modal-close { background: none; border: none; color: var(--on-primary-muted); cursor: pointer; padding: 2px; line-height: 0; transition: color 0.15s; }
+.reg-modal-close:hover { color: var(--orange); }
+.reg-modal-body { padding: 28px 32px 32px; }
+.rf-group { margin-bottom: 18px; }
+.rf-label { display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-primary-muted); margin-bottom: 7px; }
+.rf-input { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid var(--on-primary-rule); color: var(--on-primary); font-family: var(--font-body); font-size: 14px; padding: 11px 14px; outline: none; transition: border-color 0.15s; border-radius: 2px; }
+.rf-input:focus { border-color: var(--orange); }
+.rf-input::placeholder { color: var(--on-primary-sub); }
+[data-theme="light"] .rf-input { background: rgba(26,9,53,0.04); }
+.rf-sessions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rf-sess-radio { display: none; }
+.rf-sess-label { display: block; border: 1px solid var(--on-primary-rule); padding: 14px 16px; cursor: pointer; transition: all 0.15s; border-radius: 2px; }
+.rf-sess-radio:checked + .rf-sess-label { border-color: var(--orange); background: rgba(240,85,55,0.08); }
+.rf-sess-event { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
+.rf-sess-date { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--on-primary); margin-bottom: 2px; }
+.rf-sess-time { font-size: 11px; color: var(--on-primary-muted); }
+.rf-submit { width: 100%; background: var(--orange); color: #fff; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 15px; border: none; border-radius: 2px; cursor: pointer; transition: background 0.15s; margin-top: 8px; }
+.rf-submit:hover { background: var(--orange-dark); }
+.reg-success { display: none; padding: 48px 32px; text-align: center; }
+.reg-success.show { display: block; }
+.reg-success-check { width: 52px; height: 52px; border-radius: 50%; background: rgba(240,85,55,0.1); border: 1px solid rgba(240,85,55,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+.reg-success-title { font-family: var(--font-display); font-size: 22px; font-weight: 300; color: var(--on-primary); margin-bottom: 10px; }
+.reg-success-title strong { font-weight: 700; color: var(--orange); }
+.reg-success-body { font-size: 14px; color: var(--on-primary-muted); line-height: 1.75; margin-bottom: 24px; }
+.reg-dl-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff; font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; padding: 13px 24px; border: none; border-radius: 2px; cursor: pointer; transition: background 0.15s; }
+.reg-dl-btn:hover { background: var(--orange-dark); }
+
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
 @media (max-width: 900px) {
   nav { padding: 0 20px; }
@@ -707,7 +741,7 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
         <div class="intro-detail-row"><div class="idr-label">Cost</div><div class="idr-value">Free · No prerequisite</div></div>
         <div class="intro-detail-row"><div class="idr-label">Capacity</div><div class="idr-value">25 participants · Peer conversation format</div></div>
       </div>
-      <a href="#register" class="intro-cta">Register for the orientation &nbsp;→</a>
+      <button class="intro-cta" onclick="openRegModal('orientation')">Register for the orientation &nbsp;→</button>
       <div style="margin-top:16px; display:flex; align-items:center; gap:12px;">
         <a href="federal-diagnostic.html" style="font-size:13px; color:rgba(255,255,255,0.45); text-decoration:none; letter-spacing:0.04em; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:2px; transition:color 0.2s;">Not sure if you're ready? Take the 5-minute readiness diagnostic →</a>
       </div>
@@ -1238,7 +1272,7 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
     <div class="reg-right">
       <div class="reg-price">Free</div>
       <div class="reg-seats">23 spots remaining</div>
-      <a href="#register" class="reg-btn">Register now &nbsp;→</a>
+      <button class="reg-btn" onclick="openRegModal('workshop')">Register now &nbsp;→</button>
     </div>
   </div>
 </div>
@@ -1484,7 +1518,75 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
 
 </div><!-- end modal overlay -->
 
+<!-- ─── REGISTRATION MODAL ──────────────────────────────── -->
+<div class="reg-modal-overlay" id="reg-modal-overlay" onclick="closeRegModalOutside(event)">
+  <div class="reg-modal" id="reg-modal">
+    <div id="reg-form-view">
+      <div class="reg-modal-head">
+        <div class="reg-modal-title">Reserve your <strong>free seat</strong></div>
+        <button class="reg-modal-close" onclick="closeRegModal()">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/></svg>
+        </button>
+      </div>
+      <div class="reg-modal-body">
+        <form id="reg-form" onsubmit="submitRegistration(event)">
+          <div class="rf-group">
+            <label class="rf-label" for="reg-name">Full name *</label>
+            <input class="rf-input" type="text" id="reg-name" placeholder="Your full name" required>
+          </div>
+          <div class="rf-group">
+            <label class="rf-label" for="reg-email">Email address *</label>
+            <input class="rf-input" type="email" id="reg-email" placeholder="you@company.com" required>
+          </div>
+          <div class="rf-group">
+            <label class="rf-label" for="reg-company">Company or organization *</label>
+            <input class="rf-input" type="text" id="reg-company" placeholder="Your company name" required>
+          </div>
+          <div class="rf-group">
+            <label class="rf-label" for="reg-role">Your role or title</label>
+            <input class="rf-input" type="text" id="reg-role" placeholder="Founder, CEO, BD Lead…">
+          </div>
+          <div class="rf-group">
+            <label class="rf-label">Select a session *</label>
+            <div class="rf-sessions">
+              <div>
+                <input type="radio" name="rf-session" id="sess-orientation" value="orientation" class="rf-sess-radio">
+                <label class="rf-sess-label" for="sess-orientation">
+                  <div class="rf-sess-event">Free orientation</div>
+                  <div class="rf-sess-date">June 5, 2025</div>
+                  <div class="rf-sess-time">12:00 – 1:00 PM ET</div>
+                </label>
+              </div>
+              <div>
+                <input type="radio" name="rf-session" id="sess-workshop" value="workshop" class="rf-sess-radio">
+                <label class="rf-sess-label" for="sess-workshop">
+                  <div class="rf-sess-event">Half-day workshop</div>
+                  <div class="rf-sess-date">June 19, 2025</div>
+                  <div class="rf-sess-time">9:00 AM – 1:00 PM ET</div>
+                </label>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="rf-submit">Register and get my ticket &nbsp;→</button>
+        </form>
+      </div>
+    </div>
+    <div class="reg-success" id="reg-success">
+      <div class="reg-success-check">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#F05537" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 6 9 16 4 11"/></svg>
+      </div>
+      <div class="reg-success-title">You're <strong>registered</strong></div>
+      <div class="reg-success-body" id="reg-success-body"></div>
+      <button class="reg-dl-btn" onclick="downloadTicket()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1v8M4 6l3 3 3-3"/><path d="M1 10v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1"/></svg>
+        Download ticket (PDF)
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- ═══════════════════ JAVASCRIPT ═══════════════════════ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 // ── THEME TOGGLE ─────────────────────────────────────────
 function toggleTheme() {
@@ -1525,7 +1627,163 @@ function closeModal() {
 function closeModalOutside(e) {
   if (e.target === document.getElementById('modal-overlay')) closeModal();
 }
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal(); closeRegModal(); }
+});
+
+// ── REGISTRATION MODAL ────────────────────────────────────
+let _regData = null;
+
+function openRegModal(session) {
+  document.getElementById('reg-form-view').style.display = 'block';
+  document.getElementById('reg-success').classList.remove('show');
+  document.getElementById('reg-form').reset();
+  if (session === 'orientation') document.getElementById('sess-orientation').checked = true;
+  if (session === 'workshop') document.getElementById('sess-workshop').checked = true;
+  document.getElementById('reg-modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRegModal() {
+  document.getElementById('reg-modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeRegModalOutside(e) {
+  if (e.target === document.getElementById('reg-modal-overlay')) closeRegModal();
+}
+
+function submitRegistration(e) {
+  e.preventDefault();
+  const sessionEl = document.querySelector('input[name="rf-session"]:checked');
+  if (!sessionEl) { alert('Please select a session.'); return; }
+  _regData = {
+    name:    document.getElementById('reg-name').value.trim(),
+    email:   document.getElementById('reg-email').value.trim(),
+    company: document.getElementById('reg-company').value.trim(),
+    role:    document.getElementById('reg-role').value.trim(),
+    session: sessionEl.value,
+    ticket:  'TNX-' + Math.random().toString(36).substr(2,6).toUpperCase()
+  };
+  const sessionLine = _regData.session === 'orientation'
+    ? 'June 5, 2025 &nbsp;·&nbsp; Free Orientation &nbsp;·&nbsp; 12:00 – 1:00 PM ET'
+    : 'June 19, 2025 &nbsp;·&nbsp; Half-Day Workshop &nbsp;·&nbsp; 9:00 AM – 1:00 PM ET';
+  document.getElementById('reg-success-body').innerHTML =
+    `Registered for <strong>${_regData.name}</strong>.<br>${sessionLine}<br><br>` +
+    `Ticket: <strong>${_regData.ticket}</strong>`;
+  document.getElementById('reg-form-view').style.display = 'none';
+  document.getElementById('reg-success').classList.add('show');
+}
+
+function downloadTicket() {
+  if (!_regData) return;
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: 'landscape', unit: 'mm', format: [210, 99] });
+  const d = _regData;
+
+  // Background
+  doc.setFillColor(26, 9, 53);
+  doc.rect(0, 0, 210, 99, 'F');
+
+  // Orange top stripe
+  doc.setFillColor(240, 85, 55);
+  doc.rect(0, 0, 210, 5, 'F');
+
+  // Dashed vertical divider
+  doc.setDrawColor(255, 255, 255);
+  doc.setLineWidth(0.25);
+  doc.setLineDashPattern([2, 2], 0);
+  doc.line(150, 10, 150, 89);
+  doc.setLineDashPattern([], 0);
+
+  // Wordmark
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor(255, 255, 255);
+  doc.text('TECH', 12, 20);
+  doc.setTextColor(240, 85, 55);
+  doc.text('NEXT', 29.5, 20);
+
+  // Event title
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(19);
+  doc.setTextColor(255, 255, 255);
+  doc.text('Federal Market Ready', 12, 35);
+
+  // Attendee label
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(240, 85, 55);
+  doc.text('ATTENDEE', 12, 47);
+
+  // Name
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(15);
+  doc.setTextColor(255, 255, 255);
+  doc.text(d.name.substring(0, 40), 12, 56);
+
+  // Company / role
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(165, 150, 200);
+  const compLine = d.role ? `${d.company} · ${d.role}` : d.company;
+  doc.text(compLine.substring(0, 52), 12, 64);
+
+  // Session
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(240, 85, 55);
+  doc.text('SESSION', 12, 75);
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(10);
+  doc.setTextColor(255, 255, 255);
+  if (d.session === 'orientation') {
+    doc.text('June 5, 2025  ·  12:00 PM – 1:00 PM ET', 12, 83);
+    doc.setFontSize(8);
+    doc.setTextColor(165, 150, 200);
+    doc.text('1717 Innovation Center, Richmond VA  ·  Virtual available', 12, 89);
+  } else {
+    doc.text('June 19, 2025  ·  9:00 AM – 1:00 PM ET', 12, 83);
+    doc.setFontSize(8);
+    doc.setTextColor(165, 150, 200);
+    doc.text('Virginia Bio+Tech Park, Richmond VA', 12, 89);
+  }
+
+  // Right stub — decorative grid
+  const cols = [155, 164, 173, 182, 191];
+  const rows = [28, 37, 46, 55, 64];
+  cols.forEach((x, ci) => rows.forEach((y, ri) => {
+    const light = (ci + ri) % 2 === 0;
+    doc.setFillColor(light ? 45 : 35, light ? 20 : 15, light ? 72 : 60);
+    doc.rect(x, y, 7, 7, 'F');
+  }));
+
+  // ADMIT ONE
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(9);
+  doc.setTextColor(240, 85, 55);
+  const admitW = doc.getTextWidth('ADMIT ONE');
+  doc.text('ADMIT ONE', 180 - admitW / 2, 21);
+
+  // Ticket number
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(8);
+  doc.setTextColor(165, 150, 200);
+  const tnLabel = 'TICKET NO.';
+  doc.text(tnLabel, 180 - doc.getTextWidth(tnLabel) / 2, 77);
+  doc.setFontSize(13);
+  doc.setTextColor(255, 255, 255);
+  doc.text(d.ticket, 180 - doc.getTextWidth(d.ticket) / 2, 86);
+
+  // Footer
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(7);
+  doc.setTextColor(80, 65, 110);
+  const footer = 'technextprogram.com';
+  doc.text(footer, 180 - doc.getTextWidth(footer) / 2, 93);
+
+  doc.save(`TechNext-Ticket-${d.ticket}.pdf`);
+}
 </script>
 </body>
 </html>
