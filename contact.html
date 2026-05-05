@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Tech Next</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Bricolage+Grotesque:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --navy: #1A0935; --orange: #F05537; --orange-dark: #C8391A; --cream: #F4F1EB; --gray: #6B6880; --font-d: 'Bricolage Grotesque', sans-serif; --font-b: 'DM Sans', sans-serif; }
+body { font-family: var(--font-b); background: var(--navy); color: #fff; min-height: 100vh; -webkit-font-smoothing: antialiased; }
+nav { height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; border-bottom: 1px solid rgba(255,255,255,0.11); }
+.nav-wordmark { font-family: var(--font-d); font-weight: 700; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; text-decoration: none; }
+.nav-wordmark span { color: var(--orange); }
+.nav-back { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; letter-spacing: 0.03em; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.nav-back:hover { color: var(--orange); }
+.page { max-width: 720px; margin: 0 auto; padding: 80px 48px; }
+.overline { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 20px; }
+h1 { font-family: var(--font-d); font-size: clamp(32px, 5vw, 52px); font-weight: 300; letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 16px; }
+.subtitle { font-size: 17px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 60px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); margin-bottom: 48px; }
+.contact-card { background: rgba(255,255,255,0.03); padding: 32px; }
+.cc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); display: block; margin-bottom: 12px; }
+.cc-title { font-family: var(--font-d); font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+.cc-body { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+.cc-body a { color: var(--orange); text-decoration: none; }
+.cc-body a:hover { text-decoration: underline; }
+@media (max-width: 768px) { nav { padding: 0 20px; } .page { padding: 60px 20px; } .contact-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-wordmark">Tech <span>Next</span></a>
+  <a href="index.html" class="nav-back">← Back to workshop</a>
+</nav>
+<div class="page">
+  <span class="overline">Tech Next Program</span>
+  <h1>Get in touch</h1>
+  <p class="subtitle">Questions about the workshop, the diagnostic, or whether federal market entry is right for your company.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <span class="cc-label">General inquiries</span>
+      <div class="cc-title">Workshop &amp; Program</div>
+      <div class="cc-body">For questions about registration, agenda, or the Tech Next program.<br><br><a href="mailto:hello@technextprogram.com">hello@technextprogram.com</a></div>
+    </div>
+    <div class="contact-card">
+      <span class="cc-label">Location</span>
+      <div class="cc-title">Richmond, Virginia</div>
+      <div class="cc-body">June 5 orientation: 1717 Innovation Center<br><br>June 19 half-day: Virginia Bio+Tech Park, Richmond, VA</div>
+    </div>
+    <div class="contact-card">
+      <span class="cc-label">Partners</span>
+      <div class="cc-title">APEX Accelerator</div>
+      <div class="cc-body">For free federal procurement counseling, contact the Virginia APEX Accelerator directly at <a href="https://www.sba.gov/local-assistance/resource-partners/apex-accelerators" target="_blank">sba.gov</a>.</div>
+    </div>
+    <div class="contact-card">
+      <span class="cc-label">Speaking &amp; case studies</span>
+      <div class="cc-title">Share your story</div>
+      <div class="cc-body">If you have navigated the federal market and want to contribute as a case study or speaker, we want to hear from you.<br><br><a href="mailto:hello@technextprogram.com">Get in touch →</a></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
