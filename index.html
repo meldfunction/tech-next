@@ -2122,7 +2122,7 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
             <label class="rf-label">Select a session *</label>
             <div class="rf-sessions">
               <div>
-                <input type="radio" name="rf-session" id="sess-orientation" value="orientation" class="rf-sess-radio">
+                <input type="radio" name="rf-session" id="sess-orientation" value="orientation" class="rf-sess-radio" onchange="updateZoomStep()">
                 <label class="rf-sess-label" for="sess-orientation">
                   <div class="rf-sess-event">Free orientation</div>
                   <div class="rf-sess-date">June 5, 2025</div>
@@ -2130,7 +2130,7 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
                 </label>
               </div>
               <div>
-                <input type="radio" name="rf-session" id="sess-workshop" value="workshop" class="rf-sess-radio">
+                <input type="radio" name="rf-session" id="sess-workshop" value="workshop" class="rf-sess-radio" onchange="updateZoomStep()">
                 <label class="rf-sess-label" for="sess-workshop">
                   <div class="rf-sess-event">Half-day workshop</div>
                   <div class="rf-sess-date">June 19, 2025</div>
@@ -2158,7 +2158,7 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
         <div style="display:flex;flex-direction:column;gap:10px;">
           <div style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">01</span>Check your email — a confirmation with logistics details will arrive within 24 hours.</div>
           <div style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">02</span>Complete the 5-minute readiness diagnostic before attending — <a href="federal-diagnostic.html" style="color:var(--orange);text-decoration:none;">take it here</a>. High scorers qualify for Golden Ticket status.</div>
-          <div style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">03</span>Virtual attendees (June 5 only): <a href="https://us06web.zoom.us/j/89234819047" target="_blank" style="color:var(--orange);text-decoration:none;">join via Zoom →</a> (link also in your confirmation email).</div>
+          <div id="zoom-step" style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">03</span>June 5 orientation is virtual: <a href="https://us06web.zoom.us/j/89234819047" target="_blank" style="color:var(--orange);text-decoration:none;">join via Zoom →</a> (link also in your confirmation email).</div>
           <div style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">04</span>Come prepared to discuss your company's domain, current runway, and any existing government exposure — even informal.</div>
         </div>
       </div>
@@ -2271,10 +2271,18 @@ function openRegModal(session) {
   document.getElementById('reg-form-view').style.display = 'block';
   document.getElementById('reg-success').classList.remove('show');
   document.getElementById('reg-form').reset();
-  if (session === 'orientation') document.getElementById('sess-orientation').checked = true;
-  if (session === 'workshop') document.getElementById('sess-workshop').checked = true;
+  const sel = session || 'orientation';
+  document.getElementById(sel === 'orientation' ? 'sess-orientation' : 'sess-workshop').checked = true;
+  updateZoomStep();
   document.getElementById('reg-modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+}
+
+function updateZoomStep() {
+  const checked = document.querySelector('input[name="rf-session"]:checked');
+  const zoomStep = document.getElementById('zoom-step');
+  if (!zoomStep) return;
+  zoomStep.style.display = (checked && checked.value === 'orientation') ? 'flex' : 'none';
 }
 
 function closeRegModal() {
