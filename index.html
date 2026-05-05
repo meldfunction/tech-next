@@ -182,7 +182,7 @@ nav {
   font-size: clamp(52px,8vw,108px); font-weight: 300; line-height: 0.95;
   color: var(--on-primary); letter-spacing: -0.02em; margin-bottom: 16px;
 }
-.hero h1 em { font-style: normal; font-weight: 700; color: var(--orange); }
+.hero h1 em { font-style: italic; font-weight: 300; color: var(--orange); letter-spacing: -0.03em; }
 .hero-subtitle {
   font-family: var(--font-display);
   font-size: clamp(18px,2.5vw,26px); font-weight: 300;
@@ -191,6 +191,7 @@ nav {
 .hero-meta-bar {
   display: flex; align-items: center; gap: 0;
   border-top: 1px solid var(--on-primary-rule); padding-top: 36px; flex-wrap: wrap;
+  margin-top: 16px; margin-bottom: 32px;
 }
 .hero-meta-item {
   display: flex; flex-direction: column; gap: 4px;
@@ -214,9 +215,9 @@ nav {
 .hero-cta:hover { background: var(--orange-dark); }
 
 /* ─── SECTION CONTAINERS ────────────────────────────────── */
-.section { padding: 100px 48px; background: var(--bg-mid); transition: background 0.3s; }
-.section-primary { padding: 100px 48px; background: var(--bg-primary); transition: background 0.3s; }
-.section-light { padding: 100px 48px; background: var(--bg-light); transition: background 0.3s; }
+.section { padding: 150px 48px; background: var(--bg-mid); transition: background 0.3s; }
+.section-primary { padding: 150px 48px; background: var(--bg-primary); transition: background 0.3s; }
+.section-light { padding: 150px 48px; background: var(--bg-light); transition: background 0.3s; }
 .section-inner { max-width: 1100px; margin: 0 auto; }
 .overline {
   font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
@@ -792,6 +793,30 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
 .mobile-nav .nav-link { display: block; padding: 12px 0; border-bottom: 1px solid var(--nav-rule); font-size: 14px; color: var(--nav-text); text-decoration: none; letter-spacing: 0.03em; }
 .mobile-nav .nav-link:last-child { border-bottom: none; }
 .mobile-nav a.nav-cta { display: block; margin-top: 12px; text-align: center; }
+.hero-cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 24px; }
+.hero-cta-diag { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.6); text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.2); }
+.hero-cta-diag:hover { color: #fff; border-bottom-color: rgba(255,255,255,0.6); }
+/* Reserve orange for CTAs and wordmark only — all labels/overlines use muted white */
+.overline, .step-zero, .hc-num, .cc-label, .diag-n, .sc-onramp, .seq-phase, .ps-num,
+.fi-num, .mindset-num, .ri-num, .partner-group-label, .partner-role,
+.dcode-left .dcode-label, .gov-label, .gov-card-label, .nd-label, .nd-track-label,
+.nd-sc-label, .is-col .is-label, .intro-qs-label, .iq-num, .tl-year,
+.modal-section-title, .modal-lesson-label, .rf-sess-event,
+.trust-pathway-badge, .audience-tab.active { color: rgba(255,255,255,0.45) !important; }
+[data-theme="light"] .overline, [data-theme="light"] .step-zero, [data-theme="light"] .hc-num,
+[data-theme="light"] .cc-label, [data-theme="light"] .diag-n, [data-theme="light"] .ps-num,
+[data-theme="light"] .fi-num, [data-theme="light"] .mindset-num, [data-theme="light"] .ri-num,
+[data-theme="light"] .partner-group-label, [data-theme="light"] .partner-role,
+[data-theme="light"] .dcode-left .dcode-label, [data-theme="light"] .gov-label,
+[data-theme="light"] .gov-card-label, [data-theme="light"] .nd-label,
+[data-theme="light"] .nd-track-label, [data-theme="light"] .nd-sc-label,
+[data-theme="light"] .is-col .is-label, [data-theme="light"] .intro-qs-label,
+[data-theme="light"] .iq-num, [data-theme="light"] .tl-year,
+[data-theme="light"] .modal-section-title, [data-theme="light"] .modal-lesson-label,
+[data-theme="light"] .rf-sess-event, [data-theme="light"] .trust-pathway-badge,
+[data-theme="light"] .audience-tab.active { color: rgba(0,0,0,0.4) !important; }
+/* Keep audience-tab active underline orange */
+.audience-tab.active { border-bottom-color: var(--orange) !important; }
 .dcode-journey { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--on-light-rule); }
 .dj-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-light-muted); margin-bottom: 16px; }
 .dj-steps { display: flex; align-items: flex-start; gap: 0; }
@@ -801,6 +826,15 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
 .dj-step-title { font-size: 13px; font-weight: 600; color: var(--on-light); margin-bottom: 4px; letter-spacing: -0.01em; }
 .dj-step-sub { font-size: 12px; color: var(--on-light-muted); line-height: 1.5; }
 @media (max-width: 600px) { .dj-steps { flex-direction: column; gap: 16px; } .dj-step:not(:last-child)::after { content: '↓'; position: static; display: block; font-size: 14px; color: var(--on-light-muted); margin: 4px 0 0 8px; } }
+.footer-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
+.footer-si-form { display: flex; align-items: center; gap: 8px; }
+.footer-si-label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.footer-si-input { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); color: #fff; font-family: var(--font-body); font-size: 13px; padding: 7px 12px; border-radius: 2px; outline: none; min-width: 200px; }
+.footer-si-input::placeholder { color: rgba(255,255,255,0.3); }
+.footer-si-input:focus { border-color: rgba(255,255,255,0.3); }
+.footer-si-btn { background: transparent; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.5); font-size: 13px; padding: 7px 12px; border-radius: 2px; cursor: pointer; transition: all 0.2s; }
+.footer-si-btn:hover { border-color: #fff; color: #fff; }
+.trust-ambient-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 24px; }
 </style>
 </head>
 <body>
@@ -809,9 +843,6 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
 <nav>
   <a href="index.html" class="nav-wordmark">Tech <span>Next</span></a>
   <div class="nav-right">
-    <a href="#pathways" class="nav-link">Pathways</a>
-    <a href="#case-studies" class="nav-link">Case studies</a>
-    <a href="#agenda" class="nav-link">Agenda</a>
     <a href="federal-diagnostic.html" class="nav-link">Diagnostic</a>
     <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle theme">
       <svg class="theme-toggle-icon" id="theme-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
@@ -826,16 +857,12 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
   </div>
 </nav>
 <div class="mobile-nav" id="mobile-nav">
-  <a href="#pathways" class="nav-link" onclick="toggleMobileNav()">Pathways</a>
-  <a href="#case-studies" class="nav-link" onclick="toggleMobileNav()">Case studies</a>
-  <a href="#agenda" class="nav-link" onclick="toggleMobileNav()">Agenda</a>
   <a href="federal-diagnostic.html" class="nav-link">Diagnostic</a>
   <a href="#register" class="nav-link nav-cta" onclick="toggleMobileNav()">Register free →</a>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-bg-text">FEDERAL</div>
   <div class="hero-inner">
     <div class="hero-label">
       <div class="hero-label-dot"></div>
@@ -849,7 +876,10 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
       <div class="hero-meta-item"><span class="hero-meta-label">Location</span><span class="hero-meta-value">Virginia Bio+Tech Park</span></div>
       <div class="hero-meta-item"><span class="hero-meta-label">Admission</span><span class="hero-meta-value">Free &nbsp;·&nbsp; 40 seats</span></div>
     </div>
-    <a href="#register" class="hero-cta">Reserve your seat &nbsp;→</a>
+    <div class="hero-cta-row">
+      <a href="#register" class="hero-cta">Reserve your seat &nbsp;→</a>
+      <a href="federal-diagnostic.html" class="hero-cta-diag">Take the diagnostic first &nbsp;→</a>
+    </div>
     <p class="hero-social-proof">Founders from <strong>Startup Virginia, 1717 Innovation Center, VCU Innovation Gateway,</strong> and 30+ Richmond-area companies are registered.</p>
     <div class="hero-share-row">
       <button class="share-btn" onclick="shareWorkshop(this)">
@@ -1461,8 +1491,7 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
 <div class="trust-section">
   <div class="trust-inner">
     <div class="trust-header">
-      <h2>Companies that got <strong>meaningful lift</strong> from government</h2>
-      <div class="trust-header-note">Not just defense. Across identity, health IT, enterprise SaaS, and civic tech — federal contracts accelerated some of the most valuable companies built in the last decade.</div>
+      <div class="trust-ambient-label">Companies that scaled with government</div>
     </div>
     <div class="trust-scroll">
       <div class="trust-card">
@@ -1641,7 +1670,7 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
 <!-- AGENDA -->
 <div class="section" id="agenda">
   <div class="section-inner">
-    <div class="agenda-header"><h2>Workshop<br><strong>agenda</strong></h2><div class="agenda-note">Four structured sessions with open Q&A. APEX Accelerator representatives and SBIR-experienced founders will be available at the resource table during the closing hour. <span style="color:var(--orange);font-weight:500;">Note: attend the free 60-minute orientation on June 5 first — it determines whether this half-day is the right next move for your company.</span></div></div>
+    <div class="agenda-header"><h2>Workshop agenda</h2><div class="agenda-note">Four structured sessions with open Q&A. APEX Accelerator representatives and SBIR-experienced founders will be available at the resource table during the closing hour. <span style="color:var(--orange);font-weight:500;">Note: attend the free 60-minute orientation on June 5 first — it determines whether this half-day is the right next move for your company.</span></div></div>
     <div>
       <div class="agenda-item agenda-break"><div class="agenda-time-col"><div class="agenda-time">8:30 AM</div><div class="agenda-dur">30 min</div></div><div class="agenda-content"><div class="agenda-title">Registration &amp; networking</div><div class="agenda-desc">Coffee and open floor time. Meet fellow founders and Tech Next staff.</div></div></div>
       <div class="agenda-item"><div class="agenda-time-col"><div class="agenda-time">9:00 AM</div><div class="agenda-dur">20 min</div></div><div class="agenda-content"><div class="agenda-title">Welcome &amp; Tech Next overview</div><div class="agenda-desc">What Tech Next does, how this workshop fits into the broader program, and what to expect from the day.</div></div></div>
@@ -1813,55 +1842,15 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
   </div>
 </div>
 
-<!-- GOV AGENCY SECTION -->
-<div class="gov-section">
-  <div class="gov-inner">
-    <div class="gov-header">
-      <div>
-        <div class="gov-label">For government agencies</div>
-        <div class="gov-h">A better-qualified<br><strong>vendor pipeline</strong></div>
-        <div class="gov-intro">Program officers, contracting officers, OSBP teams, and small business specialists are welcome at Federal Market Ready. The companies leaving this workshop understand agency mission requirements, procurement timelines, and compliance obligations — before they contact you. This is training that benefits both sides of the procurement table.</div>
-      </div>
-      <div>
-        <div class="gov-grid">
-          <div class="gov-card">
-            <div class="gov-card-label">Industry days</div>
-            <div class="gov-card-title">Send your OSBP team</div>
-            <div class="gov-card-body">Meet companies you can invite to your next industry day or Sources Sought notice. Workshop attendees understand market research meetings — they'll come prepared and not waste your time.</div>
-          </div>
-          <div class="gov-card">
-            <div class="gov-card-label">Vendor quality</div>
-            <div class="gov-card-title">Compliance-literate founders</div>
-            <div class="gov-card-body">Companies are coached on FAR requirements, ATO timelines, FedRAMP pathways, and CMMC levels before pursuing contracts. Fewer disqualifications. Better proposals. Less friction.</div>
-          </div>
-          <div class="gov-card">
-            <div class="gov-card-label">Speak at a future session</div>
-            <div class="gov-card-title">Program officer perspective</div>
-            <div class="gov-card-body">The most valuable content we offer is direct agency voice. If you're willing to share what good vendor engagement looks like from your desk, we want to hear from you. No selling involved.</div>
-          </div>
-        </div>
-        <div class="gov-contact-bar">
-          <div class="gov-contact-text"><strong>Agency liaisons, OSBP teams, and program offices</strong> — connect directly with the Tech Next team about sending representatives or speaking at a future session.</div>
-          <a href="contact.html" class="gov-contact-cta">Contact Tech Next →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- STAY INFORMED -->
-<div class="stay-informed-band">
-  <div class="si-inner">
-    <div class="si-text"><strong>Not ready to register yet?</strong> Stay informed — we'll send the pre-read, resource list, and future event dates.</div>
-    <form class="si-form" onsubmit="submitStayInformed(event)">
-      <input type="email" class="si-input" id="si-email" placeholder="your@email.com" required>
-      <button type="submit" class="si-btn">Stay informed →</button>
+<footer>
+  <div class="footer-top">
+    <div class="footer-wordmark">Tech <span>Next</span> Program</div>
+    <form class="footer-si-form" onsubmit="submitStayInformed(event)">
+      <span class="footer-si-label">Stay informed</span>
+      <input type="email" class="footer-si-input" id="si-email" placeholder="your@email.com" required>
+      <button type="submit" class="footer-si-btn">→</button>
     </form>
   </div>
-</div>
-
-<footer>
-  <div class="footer-wordmark">Tech <span>Next</span> Program</div>
   <div class="footer-links"><a href="privacy.html" class="footer-link">Privacy</a><a href="terms.html" class="footer-link">Terms</a><a href="contact.html" class="footer-link">Contact</a></div>
   <div class="footer-partner">In partnership with Virginia APEX Accelerator &amp; SBA District Office</div>
 </footer>
