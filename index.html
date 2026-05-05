@@ -685,6 +685,122 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
   .dcode-right { align-items: flex-start; flex-direction: row; gap: 28px; }
   .partners-section { padding: 60px 20px; }
 }
+
+/* ─── SHARE BUTTON & SOCIAL PROOF ────────────────────────── */
+.hero-social-proof { font-size: 12px; color: rgba(255,255,255,0.38); letter-spacing: 0.04em; margin-top: 16px; line-height: 1.6; }
+.hero-social-proof strong { color: rgba(255,255,255,0.6); }
+.hero-share-row { display: flex; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }
+.share-btn { display: inline-flex; align-items: center; gap: 7px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: rgba(255,255,255,0.5); font-family: var(--font-body); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 16px; border-radius: 2px; cursor: pointer; transition: all 0.15s; }
+.share-btn:hover { border-color: var(--orange); color: var(--orange); background: rgba(240,85,55,0.06); }
+.share-btn.copied { border-color: #22c55e; color: #22c55e; }
+
+/* ─── AUDIENCE TABS ──────────────────────────────────────── */
+.audience-strip { background: var(--bg-mid); border-bottom: 1px solid var(--on-mid-rule); transition: background 0.3s; }
+.audience-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+.audience-tabs { display: flex; border-bottom: 1px solid var(--on-mid-rule); overflow-x: auto; }
+.audience-tab { padding: 16px 24px; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--on-mid-muted); border: none; background: none; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; transition: all 0.15s; font-family: var(--font-body); }
+.audience-tab.active { color: var(--orange); border-bottom-color: var(--orange); }
+.audience-tab:hover { color: var(--on-mid); }
+.audience-panel { display: none; padding: 28px 0 32px; }
+.audience-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.ap-headline { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--on-mid); letter-spacing: -0.01em; margin-bottom: 8px; }
+.ap-sub { font-size: 14px; color: var(--on-mid-muted); line-height: 1.7; }
+.ap-bullets { display: flex; flex-direction: column; gap: 9px; }
+.ap-bullet { font-size: 13px; color: var(--on-mid-muted); display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; }
+.ap-bullet svg { flex-shrink: 0; margin-top: 2px; }
+.ap-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--orange); color: #fff; font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 20px; border-radius: 2px; text-decoration: none; border: none; cursor: pointer; transition: background 0.15s; margin-top: 16px; }
+.ap-cta:hover { background: var(--orange-dark); }
+@media (max-width:768px) { .audience-inner { padding: 0 20px; } .audience-panel.active { grid-template-columns: 1fr; gap: 24px; } }
+
+/* ─── TRUST SIGNAL STRIP ─────────────────────────────────── */
+.trust-section { background: var(--bg-light); padding: 72px 48px; border-top: 1px solid var(--on-light-rule); transition: background 0.3s; }
+.trust-inner { max-width: 1100px; margin: 0 auto; }
+.trust-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 40px; flex-wrap: wrap; gap: 12px; }
+.trust-header h2 { font-family: var(--font-display); font-size: clamp(20px,2.5vw,28px); font-weight: 300; color: var(--on-light); letter-spacing: -0.02em; }
+.trust-header h2 strong { font-weight: 700; }
+.trust-header-note { font-size: 13px; color: var(--on-light-muted); max-width: 380px; line-height: 1.6; }
+.trust-scroll { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--on-light-rule); border: 1px solid var(--on-light-rule); }
+.trust-card { background: var(--bg-mid); padding: 24px; display: flex; flex-direction: column; gap: 12px; transition: background 0.3s; }
+.trust-logo { height: 28px; display: flex; align-items: center; }
+.trust-logo img { height: 22px; width: auto; object-fit: contain; filter: grayscale(1); opacity: 0.6; transition: all 0.2s; }
+.trust-card:hover .trust-logo img { filter: none; opacity: 1; }
+.trust-logo-text { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--on-mid-muted); }
+.trust-company { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--on-mid); letter-spacing: -0.01em; }
+.trust-pathway-badge { display: inline-block; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; background: rgba(240,85,55,0.1); color: var(--orange); }
+.trust-lift { font-size: 11px; color: var(--on-mid-muted); line-height: 1.55; }
+.trust-metric { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--on-mid); letter-spacing: -0.02em; }
+.trust-metric-label { font-size: 10px; color: var(--on-mid-muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 2px; }
+@media (max-width:900px) { .trust-section { padding: 60px 20px; } .trust-scroll { grid-template-columns: repeat(2,1fr); } }
+@media (max-width:500px) { .trust-scroll { grid-template-columns: 1fr; } }
+
+/* ─── GOLDEN TICKET ──────────────────────────────────────── */
+.golden-section { background: var(--bg-primary); padding: 72px 48px; border-top: 1px solid rgba(212,175,55,0.2); transition: background 0.3s; }
+.golden-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: center; }
+.golden-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(212,175,55,0.1); border: 1px solid rgba(212,175,55,0.3); color: #D4AF37; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 5px 12px; border-radius: 2px; margin-bottom: 16px; }
+.golden-h { font-family: var(--font-display); font-size: clamp(26px,3.5vw,42px); font-weight: 300; color: var(--on-primary); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+.golden-h strong { font-weight: 700; color: #D4AF37; }
+.golden-sub { font-size: 15px; color: var(--on-primary-muted); line-height: 1.75; margin-bottom: 24px; max-width: 520px; }
+.golden-criteria { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.golden-criterion { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--on-primary-muted); }
+.golden-criterion svg { flex-shrink: 0; margin-top: 2px; }
+.golden-card { background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.2); padding: 28px; }
+.gc-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(212,175,55,0.7); margin-bottom: 12px; }
+.gc-headline { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--on-primary); margin-bottom: 10px; }
+.gc-body { font-size: 13px; color: var(--on-primary-muted); line-height: 1.7; margin-bottom: 16px; }
+.gc-cta { display: inline-flex; align-items: center; gap: 8px; background: #D4AF37; color: #1A0935; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 12px 22px; border-radius: 2px; text-decoration: none; transition: opacity 0.15s; }
+.gc-cta:hover { opacity: 0.88; }
+@media (max-width:768px) { .golden-section { padding: 60px 20px; } .golden-inner { grid-template-columns: 1fr; gap: 32px; } }
+
+/* ─── GOV AGENCY SECTION ─────────────────────────────────── */
+.gov-section { background: var(--bg-light); padding: 80px 48px; border-top: 1px solid var(--on-light-rule); transition: background 0.3s; }
+.gov-inner { max-width: 1100px; margin: 0 auto; }
+.gov-header { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-bottom: 48px; align-items: start; }
+.gov-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+.gov-h { font-family: var(--font-display); font-size: clamp(26px,3vw,38px); font-weight: 300; color: var(--on-light); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 12px; }
+.gov-h strong { font-weight: 700; }
+.gov-intro { font-size: 15px; color: var(--on-light-muted); line-height: 1.75; }
+.gov-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--on-light-rule); border: 1px solid var(--on-light-rule); margin-bottom: 32px; }
+.gov-card { background: var(--bg-mid); padding: 28px; transition: background 0.3s; }
+.gov-card-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+.gov-card-title { font-family: var(--font-display); font-size: 16px; font-weight: 600; color: var(--on-mid); margin-bottom: 8px; }
+.gov-card-body { font-size: 13px; color: var(--on-mid-muted); line-height: 1.7; }
+.gov-contact-bar { background: var(--bg-primary); padding: 24px 28px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.gov-contact-text { font-size: 14px; color: var(--on-primary-muted); }
+.gov-contact-text strong { color: var(--on-primary); }
+.gov-contact-cta { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); font-family: var(--font-body); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 20px; border-radius: 2px; text-decoration: none; transition: all 0.15s; }
+.gov-contact-cta:hover { border-color: var(--orange); color: var(--orange); }
+@media (max-width:768px) { .gov-section { padding: 60px 20px; } .gov-header { grid-template-columns: 1fr; gap: 24px; } .gov-grid { grid-template-columns: 1fr; } }
+
+/* ─── STAY INFORMED ──────────────────────────────────────── */
+.stay-informed-band { background: rgba(255,255,255,0.03); border-top: 1px solid var(--on-primary-rule); padding: 32px 48px; }
+.si-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.si-text { font-size: 14px; color: var(--on-primary-muted); }
+.si-text strong { color: var(--on-primary); }
+.si-form { display: flex; gap: 8px; flex-wrap: wrap; }
+.si-input { background: rgba(255,255,255,0.05); border: 1px solid var(--on-primary-rule); color: var(--on-primary); font-family: var(--font-body); font-size: 13px; padding: 10px 14px; border-radius: 2px; outline: none; width: 240px; transition: border-color 0.15s; }
+.si-input:focus { border-color: var(--orange); }
+.si-input::placeholder { color: var(--on-primary-sub); }
+.si-btn { background: none; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.6); font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 10px 18px; border-radius: 2px; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
+.si-btn:hover { border-color: var(--orange); color: var(--orange); }
+@media (max-width:600px) { .stay-informed-band { padding: 28px 20px; } .si-inner { flex-direction: column; align-items: flex-start; } .si-input { width: 100%; } }
+
+/* ─── MOBILE NAV ─────────────────────────────────────────── */
+.mobile-menu-btn { display: none; background: none; border: 1px solid var(--on-primary-rule); color: var(--nav-text); padding: 6px 10px; border-radius: 2px; cursor: pointer; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+@media (max-width: 900px) { .mobile-menu-btn { display: inline-flex; align-items: center; gap: 6px; } }
+.mobile-nav { display: none; background: var(--bg-nav); border-top: 1px solid var(--nav-rule); padding: 16px 20px; flex-direction: column; gap: 0; }
+.mobile-nav.open { display: flex; }
+.mobile-nav .nav-link { display: block; padding: 12px 0; border-bottom: 1px solid var(--nav-rule); font-size: 14px; color: var(--nav-text); text-decoration: none; letter-spacing: 0.03em; }
+.mobile-nav .nav-link:last-child { border-bottom: none; }
+.mobile-nav a.nav-cta { display: block; margin-top: 12px; text-align: center; }
+.dcode-journey { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--on-light-rule); }
+.dj-title { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--on-light-muted); margin-bottom: 16px; }
+.dj-steps { display: flex; align-items: flex-start; gap: 0; }
+.dj-step { flex: 1; position: relative; }
+.dj-step:not(:last-child)::after { content: '→'; position: absolute; right: -12px; top: 14px; font-size: 14px; color: var(--on-light-muted); }
+.dj-num { width: 28px; height: 28px; border-radius: 50%; background: var(--orange); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+.dj-step-title { font-size: 13px; font-weight: 600; color: var(--on-light); margin-bottom: 4px; letter-spacing: -0.01em; }
+.dj-step-sub { font-size: 12px; color: var(--on-light-muted); line-height: 1.5; }
+@media (max-width: 600px) { .dj-steps { flex-direction: column; gap: 16px; } .dj-step:not(:last-child)::after { content: '↓'; position: static; display: block; font-size: 14px; color: var(--on-light-muted); margin: 4px 0 0 8px; } }
 </style>
 </head>
 <body>
@@ -701,11 +817,21 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
       <svg class="theme-toggle-icon" id="theme-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
         <circle cx="10" cy="10" r="4"/><line x1="10" y1="1" x2="10" y2="3"/><line x1="10" y1="17" x2="10" y2="19"/><line x1="1" y1="10" x2="3" y2="10"/><line x1="17" y1="10" x2="19" y2="10"/><line x1="3.5" y1="3.5" x2="5" y2="5"/><line x1="15" y1="15" x2="16.5" y2="16.5"/><line x1="3.5" y1="16.5" x2="5" y2="15"/><line x1="15" y1="5" x2="16.5" y2="3.5"/>
       </svg>
-      <span id="theme-label">Light</span>
     </button>
     <a href="#register" class="nav-cta">Register free</a>
+    <button class="mobile-menu-btn" onclick="toggleMobileNav()" aria-label="Menu">
+      <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="0" y1="1" x2="14" y2="1"/><line x1="0" y1="5" x2="14" y2="5"/><line x1="0" y1="9" x2="14" y2="9"/></svg>
+      Menu
+    </button>
   </div>
 </nav>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#pathways" class="nav-link" onclick="toggleMobileNav()">Pathways</a>
+  <a href="#case-studies" class="nav-link" onclick="toggleMobileNav()">Case studies</a>
+  <a href="#agenda" class="nav-link" onclick="toggleMobileNav()">Agenda</a>
+  <a href="federal-diagnostic.html" class="nav-link">Diagnostic</a>
+  <a href="#register" class="nav-link nav-cta" onclick="toggleMobileNav()">Register free →</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -724,6 +850,77 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
       <div class="hero-meta-item"><span class="hero-meta-label">Admission</span><span class="hero-meta-value">Free &nbsp;·&nbsp; 40 seats</span></div>
     </div>
     <a href="#register" class="hero-cta">Reserve your seat &nbsp;→</a>
+    <p class="hero-social-proof">Founders from <strong>Startup Virginia, 1717 Innovation Center, VCU Innovation Gateway,</strong> and 30+ Richmond-area companies are registered.</p>
+    <div class="hero-share-row">
+      <button class="share-btn" onclick="shareWorkshop(this)">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="2" r="1.5"/><circle cx="9" cy="10" r="1.5"/><circle cx="2" cy="6" r="1.5"/><line x1="3.4" y1="6.7" x2="7.6" y2="9.3"/><line x1="7.6" y1="2.7" x2="3.4" y2="5.3"/></svg>
+        Share with a founder
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- AUDIENCE TABS -->
+<div class="audience-strip">
+  <div class="audience-inner">
+    <div class="audience-tabs">
+      <button class="audience-tab active" onclick="showAudience('founder',this)">For Founders</button>
+      <button class="audience-tab" onclick="showAudience('contractor',this)">For Contractors</button>
+      <button class="audience-tab" onclick="showAudience('investor',this)">For Investors</button>
+      <button class="audience-tab" onclick="showAudience('agency',this)">For Gov Agencies</button>
+    </div>
+    <div class="audience-panel active" id="aud-founder">
+      <div>
+        <div class="ap-headline">Leave knowing whether the government wants what you build</div>
+        <div class="ap-sub">And if yes — which door to open first. This workshop replaces 18 months of expensive trial-and-error with a sequenced, honest map of the federal market built for Richmond-area founders.</div>
+        <button class="ap-cta" onclick="openRegModal('workshop')">Reserve your seat →</button>
+      </div>
+      <div class="ap-bullets">
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Validate whether a federal market exists for your product — before spending a dollar pursuing it</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Choose the right on-ramp: SBIR, 8(a), OTA, GSA Schedule, or subcontract-first — mapped step by step</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Meet prime contractors actively looking for small business teaming partners in the room</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>High-scoring diagnostic companies earn Golden Ticket status — visible to contractor BD teams</div>
+      </div>
+    </div>
+    <div class="audience-panel" id="aud-contractor">
+      <div>
+        <div class="ap-headline">Find your next specialized small business partner</div>
+        <div class="ap-sub">The 40 founders in this room are pre-screened through our Federal Readiness Diagnostic. You'll know their technology stage, target agency, and readiness score before the first conversation. This is curated deal flow, not a vendor fair.</div>
+        <a href="contact.html" class="ap-cta">Register your BD team →</a>
+      </div>
+      <div class="ap-bullets">
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Golden Ticket companies (score 21+ on readiness diagnostic) are flagged for teaming conversations</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Attend the prime contractor network session (12:15 PM) — direct access to founder pipeline</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Supply chain opportunities: identify specialized capabilities across defense, health IT, and civilian tech</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Fulfill small business subcontracting plan requirements with companies you've already vetted</div>
+      </div>
+    </div>
+    <div class="audience-panel" id="aud-investor">
+      <div>
+        <div class="ap-headline">Government revenue is recurring, defensible, and predictable</div>
+        <div class="ap-sub">Federal contracts carry 90%+ renewal rates, are budget-line items (not discretionary), and create compliance moats that protect against commercial competition. The founders in this room are building towards the most durable revenue model in enterprise software.</div>
+        <a href="contact.html" class="ap-cta">Connect with Tech Next →</a>
+      </div>
+      <div class="ap-bullets">
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Deal flow: see which Richmond-area companies are federal-ready — before they raise their next round</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>ID.me, Octo, Fearless — Virginia companies that turned federal readiness into $350M+ exits and $2B+ valuations</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Diagnostic scores available for portfolio company assessment — structured readiness framework</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Government compliance moat: CMMC, FedRAMP, 8(a) certifications are expensive to replicate and protect margin</div>
+      </div>
+    </div>
+    <div class="audience-panel" id="aud-agency">
+      <div>
+        <div class="ap-headline">A better-qualified vendor pipeline starts here</div>
+        <div class="ap-sub">Program officers, OSBP teams, and contracting offices are welcome. The companies leaving this workshop understand agency mission requirements, procurement timelines, and compliance obligations — before they contact you.</div>
+        <a href="contact.html" class="ap-cta">Connect with agency liaison →</a>
+      </div>
+      <div class="ap-bullets">
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Send your OSBP team — meet companies you can invite to your next industry day or Sources Sought</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Companies are coached on market research meetings — they will contact you appropriately and knowledgeably</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Speak at a future session — program officer perspectives are the most valuable content we offer</div>
+        <div class="ap-bullet"><svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#F05537" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg>Refer your small business specialist network — they often know which companies need exactly this orientation</div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -841,6 +1038,31 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
   </div>
 </div>
 
+<!-- GOLDEN TICKET -->
+<div class="golden-section">
+  <div class="golden-inner">
+    <div>
+      <div class="golden-badge">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><path d="M6 1l1.5 3 3.5.5-2.5 2.5.5 3.5L6 9 3 10.5l.5-3.5L1 4.5l3.5-.5z"/></svg>
+        Golden Ticket
+      </div>
+      <div class="golden-h">Score high. Get seen<br>by <strong>prime contractors.</strong></div>
+      <div class="golden-sub">Companies that score 21 or above on the Federal Readiness Diagnostic and register for the workshop earn Golden Ticket status. These companies are curated into a separate briefing shared with the prime contractor BD teams attending the June 19 workshop — creating direct teaming conversations before the room even opens.</div>
+      <div class="golden-criteria">
+        <div class="golden-criterion"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5.5 10.5 12 3"/></svg>Score 21+ on the Federal Readiness Diagnostic (Wolf, Bison, or Eagle archetype)</div>
+        <div class="golden-criterion"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5.5 10.5 12 3"/></svg>Registered company in SAM.gov with at least one NAICS code selected</div>
+        <div class="golden-criterion"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 7 5.5 10.5 12 3"/></svg>Register for the June 19 workshop before June 12</div>
+      </div>
+    </div>
+    <div class="golden-card">
+      <div class="gc-label">What Golden Ticket companies receive</div>
+      <div class="gc-headline">Direct contractor visibility</div>
+      <div class="gc-body">Your company profile — technology focus, target agency, readiness score, and team background — is compiled into a curated brief shared with attending prime contractors (Booz Allen, SAIC, Leidos, GDIT, Peraton) before the workshop. Their BD teams arrive knowing who you are. You arrive knowing they've been briefed.</div>
+      <a href="federal-diagnostic.html" class="gc-cta">Take the diagnostic to qualify →</a>
+    </div>
+  </div>
+</div>
+
 <!-- SECTOR -->
 <div class="section">
   <div class="section-inner">
@@ -849,7 +1071,7 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
       <div class="sector-note">The experience varies dramatically depending on which part of the government you target. Choose your lane deliberately. Barrier to entry, relationship requirements, and contract vehicles are fundamentally different across these five categories.</div>
     </div>
     <div class="sector-cols">
-      <div class="sector-col"><div class="sc-name">DoD / Defense</div><div class="sc-sub">Army, Navy, Air Force, DARPA, DIU</div><div class="sc-barrier-label">Barrier to entry</div><div class="barrier-bar"><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div></div><div class="sc-best">Deep tech, dual-use innovation, defense-specific capabilities. Clearances often required for sustained work.</div><div class="sc-onramp">OTA · DIU · SBIR Phase I</div></div>
+      <div class="sector-col"><div class="sc-name">DoD / Defense</div><div class="sc-sub">Army, Navy, Air Force, DARPA, DIU</div><div class="sc-barrier-label">Barrier to entry</div><div class="barrier-bar"><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div></div><div class="sc-best">Deep tech, dual-use innovation, defense-specific capabilities. Many early-stage DoD contracts (SBIR Phase I, OTA prototypes) can be performed without a clearance — clearance requirements typically emerge at sustained prime contract stage.</div><div class="sc-onramp">OTA · DIU · SBIR Phase I</div></div>
       <div class="sector-col"><div class="sc-name">Civilian Agencies</div><div class="sc-sub">HHS, USDA, EPA, DOT, DOL</div><div class="sc-barrier-label">Barrier to entry</div><div class="barrier-bar"><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg"></div><div class="barrier-seg"></div></div><div class="sc-best">Mission-driven tech, civic tools, data systems. Smaller procurement offices mean more relationship access.</div><div class="sc-onramp">SBIR · Open market solicitations</div></div>
       <div class="sector-col"><div class="sc-name">GSA / 18F Ecosystem</div><div class="sc-sub">GSA, Login.gov, 18F, TTS</div><div class="sc-barrier-label">Barrier to entry</div><div class="barrier-bar"><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg"></div><div class="barrier-seg"></div></div><div class="sc-best">Digital services, UX, identity, cloud infrastructure. More progressive procurement culture.</div><div class="sc-onramp">GSA Schedule · MAS</div></div>
       <div class="sector-col"><div class="sc-name">State / Local Pass-Through</div><div class="sc-sub">Federal dollars via state agencies</div><div class="sc-barrier-label">Barrier to entry</div><div class="barrier-bar"><div class="barrier-seg filled"></div><div class="barrier-seg filled"></div><div class="barrier-seg"></div><div class="barrier-seg"></div><div class="barrier-seg"></div></div><div class="sc-best">Housing, workforce, public health, community services. Overlooked but accessible early on-ramp.</div><div class="sc-onramp">Grant programs · Cooperative agreements</div></div>
@@ -857,6 +1079,221 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
     </div>
   </div>
 </div>
+
+<!-- NON-DEFENSE PATHS -->
+<div class="nd-section" id="civilian-pathways">
+  <div class="nd-inner">
+    <div class="nd-header">
+      <div>
+        <div class="nd-label">Alternative pathways</div>
+        <h2 class="nd-h">Not pursuing defense?<br><strong>Here are your paths.</strong></h2>
+        <p class="nd-sub">The federal market is not only DoD. Civilian agencies, health and life sciences, and state/local pass-through programs represent hundreds of billions in annual spend — often with lower barriers, faster cycles, and no clearance requirement.</p>
+      </div>
+      <div class="nd-toggle-wrap">
+        <button class="nd-toggle active" id="nd-toggle-all" onclick="ndFilter('all')">Show all paths</button>
+        <button class="nd-toggle" id="nd-toggle-civilian" onclick="ndFilter('civilian')">Civilian only</button>
+        <button class="nd-toggle" id="nd-toggle-health" onclick="ndFilter('health')">Health &amp; Science</button>
+        <button class="nd-toggle" id="nd-toggle-local" onclick="ndFilter('local')">State &amp; Local</button>
+      </div>
+    </div>
+
+    <div class="nd-diagram">
+
+      <!-- TRACK: Health & Life Sciences -->
+      <div class="nd-track nd-health" data-track="health">
+        <div class="nd-track-label">
+          <div class="nd-tl-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 2v14M2 9h14"/></svg>
+          </div>
+          <span>Health &amp; Life Sciences</span>
+        </div>
+        <div class="nd-nodes">
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">NIH / NSF<br>SBIR</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">FDA / EMA<br>Alignment</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">CMS / VA<br>Contracts</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">HHS / NIH<br>Prime</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node nd-node-terminal">
+            <div class="nd-dot nd-dot-terminal"></div>
+            <div class="nd-node-label">$2M–$50M<br>Contracts</div>
+          </div>
+        </div>
+        <div class="nd-track-meta">Examples: EHR systems, clinical analytics, telehealth, drug discovery AI, lab automation · Key agencies: NIH, FDA, CMS, VA, HHS</div>
+      </div>
+
+      <!-- TRACK: Civilian Agencies -->
+      <div class="nd-track nd-civilian" data-track="civilian">
+        <div class="nd-track-label">
+          <div class="nd-tl-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="14" height="9" rx="1"/><path d="M6 7V5a3 3 0 0 1 6 0v2"/></svg>
+          </div>
+          <span>Civilian Agencies</span>
+        </div>
+        <div class="nd-nodes">
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">SAM.gov +<br>Market Research</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">SBIR / STTR<br>(HHS, NSF, DOT)</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">GSA Schedule<br>4–8 months</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">Agency<br>Task Orders</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node nd-node-terminal">
+            <div class="nd-dot nd-dot-terminal"></div>
+            <div class="nd-node-label">GWAC /<br>Prime Contracts</div>
+          </div>
+        </div>
+        <div class="nd-track-meta">Examples: Digital services, data analytics, IT modernization, identity, HR tech · Key agencies: GSA, HHS, USDA, EPA, DOT, SBA, Treasury</div>
+      </div>
+
+      <!-- TRACK: State & Local Pass-Through -->
+      <div class="nd-track nd-local" data-track="local">
+        <div class="nd-track-label">
+          <div class="nd-tl-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><polygon points="9 2 16 6 16 14 9 18 2 14 2 6"/></svg>
+          </div>
+          <span>State &amp; Local Pass-Through</span>
+        </div>
+        <div class="nd-nodes">
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">State Grant<br>Programs</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">State / Local<br>Contract</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">Federal<br>Pass-Through</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">SAM.gov +<br>Certifications</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node nd-node-terminal">
+            <div class="nd-dot nd-dot-terminal"></div>
+            <div class="nd-node-label">Federal<br>Prime Contracts</div>
+          </div>
+        </div>
+        <div class="nd-track-meta">Examples: Housing tech, workforce systems, public health, community services, education · Lowest barrier to entry · Best for companies with state/local history</div>
+      </div>
+
+      <!-- TRACK: Defense (shown dimmed by default) -->
+      <div class="nd-track nd-defense" data-track="defense">
+        <div class="nd-track-label nd-defense-label">
+          <div class="nd-tl-icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M9 2l2 5h5l-4 3 1.5 5L9 12l-4.5 3L6 10 2 7h5z"/></svg>
+          </div>
+          <span>Defense (DoD)</span>
+        </div>
+        <div class="nd-nodes">
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">SBIR<br>Phase I</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">OTA<br>Prototype</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">DIU /<br>AFWERX</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node">
+            <div class="nd-dot"></div>
+            <div class="nd-node-label">DoD<br>Contract</div>
+          </div>
+          <div class="nd-connector"><svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 2l6 4-6 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="nd-node nd-node-terminal">
+            <div class="nd-dot nd-dot-terminal"></div>
+            <div class="nd-node-label">FAR Prime<br>Contracts</div>
+          </div>
+        </div>
+        <div class="nd-track-meta">Clearance note: Many early-stage DoD contracts (SBIR Phase I, OTA prototypes) can be performed without a security clearance. Clearance requirements typically emerge at sustained prime contract stage.</div>
+      </div>
+
+    </div><!-- end nd-diagram -->
+
+    <div class="nd-supply-chain">
+      <div class="nd-sc-label">Supply chain entry point — available across all tracks</div>
+      <div class="nd-sc-body">Large federal primes (Booz Allen, Leidos, SAIC, Peraton) are <strong>required by law</strong> to maintain small business subcontracting plans and actively recruit specialized technology partners. Subcontracting is the fastest path to past performance — and the prime contractor network session on June 19 is where those conversations start.</div>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ─── NON-DEFENSE PATHWAY SECTION ────────────────────────── */
+.nd-section { background: var(--bg-primary); padding: 80px 48px; transition: background 0.3s; }
+.nd-inner { max-width: 1100px; margin: 0 auto; }
+.nd-header { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: start; margin-bottom: 48px; }
+.nd-label { font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 12px; }
+.nd-h { font-family: var(--font-display); font-size: clamp(26px,3.5vw,44px); font-weight: 300; color: var(--on-primary); letter-spacing: -0.02em; line-height: 1.05; margin-bottom: 12px; }
+.nd-h strong { font-weight: 700; }
+.nd-sub { font-size: 15px; color: var(--on-primary-muted); line-height: 1.75; max-width: 520px; }
+.nd-toggle-wrap { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; padding-top: 8px; }
+.nd-toggle { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.45); font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 8px 16px; border-radius: 2px; cursor: pointer; transition: all 0.15s; text-align: right; white-space: nowrap; }
+.nd-toggle.active { background: rgba(240,85,55,0.1); border-color: var(--orange); color: var(--orange); }
+.nd-toggle:hover:not(.active) { border-color: rgba(255,255,255,0.25); color: rgba(255,255,255,0.7); }
+.nd-diagram { display: flex; flex-direction: column; gap: 2px; }
+.nd-track { padding: 20px 24px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); transition: all 0.3s; }
+.nd-track.dimmed { opacity: 0.2; pointer-events: none; }
+.nd-track.highlighted { background: rgba(240,85,55,0.06); border-color: rgba(240,85,55,0.2); }
+.nd-track-label { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); }
+.nd-defense-label { color: rgba(255,255,255,0.35); }
+.nd-defense .nd-track-label { color: rgba(255,255,255,0.35); }
+.nd-tl-icon { width: 28px; height: 28px; border-radius: 50%; background: rgba(240,85,55,0.12); border: 1px solid rgba(240,85,55,0.2); display: flex; align-items: center; justify-content: center; color: var(--orange); flex-shrink: 0; }
+.nd-defense .nd-tl-icon { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.35); }
+.nd-nodes { display: flex; align-items: center; gap: 0; overflow-x: auto; padding-bottom: 4px; margin-bottom: 12px; }
+.nd-node { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+.nd-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--orange); border: 2px solid var(--orange); box-shadow: 0 0 0 3px rgba(240,85,55,0.15); }
+.nd-defense .nd-dot { background: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.3); box-shadow: none; }
+.nd-dot-terminal { background: var(--on-primary); border-color: var(--orange); box-shadow: 0 0 0 4px rgba(240,85,55,0.2); }
+.nd-defense .nd-dot-terminal { background: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.4); box-shadow: none; }
+.nd-node-label { font-size: 10px; color: rgba(255,255,255,0.55); text-align: center; line-height: 1.4; max-width: 72px; }
+.nd-defense .nd-node-label { color: rgba(255,255,255,0.3); }
+.nd-connector { flex-shrink: 0; width: 40px; color: var(--orange); opacity: 0.4; margin-bottom: 20px; }
+.nd-defense .nd-connector { color: rgba(255,255,255,0.2); }
+.nd-track-meta { font-size: 11px; color: var(--on-primary-sub); line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 10px; }
+.nd-supply-chain { margin-top: 24px; padding: 20px 24px; background: rgba(240,85,55,0.05); border: 1px solid rgba(240,85,55,0.15); }
+.nd-sc-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--orange); margin-bottom: 8px; }
+.nd-sc-body { font-size: 13px; color: var(--on-primary-muted); line-height: 1.7; }
+@media (max-width:768px) { .nd-section { padding: 60px 20px; } .nd-header { grid-template-columns: 1fr; } .nd-toggle-wrap { align-items: flex-start; flex-direction: row; flex-wrap: wrap; } }
+</style>
 
 <!-- PATHWAY EXPLORER -->
 <div class="pathway-section" id="pathways">
@@ -1020,6 +1457,74 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
   </div>
 </div>
 
+<!-- TRUST STRIP -->
+<div class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-header">
+      <h2>Companies that got <strong>meaningful lift</strong> from government</h2>
+      <div class="trust-header-note">Not just defense. Across identity, health IT, enterprise SaaS, and civic tech — federal contracts accelerated some of the most valuable companies built in the last decade.</div>
+    </div>
+    <div class="trust-scroll">
+      <div class="trust-card">
+        <div class="trust-logo"><img src="https://logo.clearbit.com/idme.com" alt="ID.me" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="trust-logo-text" style="display:none">ID.me</span></div>
+        <div class="trust-company">ID.me</div>
+        <span class="trust-pathway-badge">Civilian · Identity</span>
+        <div class="trust-metric">$2B+<br><span class="trust-metric-label">Valuation · $340M raised</span></div>
+        <div class="trust-lift">Virginia-based. Powers identity verification for 20 federal agencies, 45 states, SSA, and VA.gov. Government modernization mandates drove adoption.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-logo"><img src="https://logo.clearbit.com/socure.com" alt="Socure" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="trust-logo-text" style="display:none">Socure</span></div>
+        <div class="trust-company">Socure</div>
+        <span class="trust-pathway-badge">State/Federal · Fraud</span>
+        <div class="trust-metric">$4.5B<br><span class="trust-metric-label">Valuation · $757M raised</span></div>
+        <div class="trust-lift">Government fraud prevention mandate for unemployment systems drove early state and federal adoption. $400B in pandemic-era unemployment fraud created urgent need.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-logo"><img src="https://logo.clearbit.com/tylertech.com" alt="Tyler Technologies" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="trust-logo-text" style="display:none">Tyler Tech</span></div>
+        <div class="trust-company">Tyler Technologies</div>
+        <span class="trust-pathway-badge">State/Local · GovSaaS</span>
+        <div class="trust-metric">$15B<br><span class="trust-metric-label">Market cap · NYSE: TYL</span></div>
+        <div class="trust-lift">45,000+ government customers. 98% gross client retention. Government modernization mandates created 21 consecutive quarters of 20%+ SaaS growth.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-logo"><img src="https://logo.clearbit.com/servicenow.com" alt="ServiceNow" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="trust-logo-text" style="display:none">ServiceNow</span></div>
+        <div class="trust-company">ServiceNow</div>
+        <span class="trust-pathway-badge">Federal · Enterprise IT</span>
+        <div class="trust-metric">$13.3B<br><span class="trust-metric-label">Annual revenue · 99% fed renewal</span></div>
+        <div class="trust-lift">Federal IT automation initiative created a single agency anchor contract representing outsized revenue. 99% federal renewal rate reflects mission-critical positioning.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-logo"><span class="trust-logo-text">Fearless</span></div>
+        <div class="trust-company">Fearless</div>
+        <span class="trust-pathway-badge">8(a) · Digital Services</span>
+        <div class="trust-metric">$100M+<br><span class="trust-metric-label">Revenue · Baltimore, MD</span></div>
+        <div class="trust-lift">Woman-owned digital services firm grew from 5 to 400+ employees using 8(a) certification as launchpad. Major CMS and VA contracts built the foundation.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-logo"><span class="trust-logo-text">Octo</span></div>
+        <div class="trust-company">Octo</div>
+        <span class="trust-pathway-badge">8(a) → Acquisition</span>
+        <div class="trust-metric">$350M<br><span class="trust-metric-label">IBM acquisition · Reston, VA</span></div>
+        <div class="trust-lift">Minority-owned IT firm used 8(a) to build deep HHS, VA, and OPM relationships. Graduated to open-market competition, then acquired by IBM for $350M in 2021.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-logo"><img src="https://logo.clearbit.com/anduril.com" alt="Anduril" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="trust-logo-text" style="display:none">Anduril</span></div>
+        <div class="trust-company">Anduril Industries</div>
+        <span class="trust-pathway-badge">OTA / DIU · Defense</span>
+        <div class="trust-metric">$14B<br><span class="trust-metric-label">Valuation · 2018 first contract</span></div>
+        <div class="trust-lift">Founded 2017. First DoD OTA contract via DIU in 2018. Product-led development with federal as primary customer. Proved the OTA-first model works at scale.</div>
+      </div>
+      <div class="trust-card">
+        <div class="trust-logo"><img src="https://logo.clearbit.com/shield.ai" alt="Shield AI" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="trust-logo-text" style="display:none">Shield AI</span></div>
+        <div class="trust-company">Shield AI</div>
+        <span class="trust-pathway-badge">SBIR → OTA · Defense AI</span>
+        <div class="trust-metric">$2.4B<br><span class="trust-metric-label">Valuation · AI autonomy</span></div>
+        <div class="trust-lift">Started with SBIR Phase I, transitioned to OTA for AI autonomy systems. DoD's AI modernization initiative created the market; Shield AI captured it first.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- CASE STUDIES -->
 <div class="section" id="case-studies">
   <div class="section-inner">
@@ -1171,7 +1676,8 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
           <a href="https://sam.gov" class="resource-item"><div class="ri-num">01</div><div><div class="ri-title">SAM.gov</div><div class="ri-desc">System for Award Management. Step zero for any federal business activity.</div></div><div class="ri-arrow">↗</div></a>
           <a href="https://usaspending.gov" class="resource-item"><div class="ri-num">02</div><div><div class="ri-title">USASpending.gov</div><div class="ri-desc">Search federal contract awards by agency and keyword. Validate your market here.</div></div><div class="ri-arrow">↗</div></a>
           <a href="https://www.sbir.gov" class="resource-item"><div class="ri-num">03</div><div><div class="ri-title">SBIR.gov</div><div class="ri-desc">The primary R&D grant pathway for tech founders. Phase I is the proof-of-concept grant.</div></div><div class="ri-arrow">↗</div></a>
-          <a href="https://www.sba.gov/local-assistance/resource-partners/apex-accelerators" class="resource-item"><div class="ri-num">04</div><div><div class="ri-title">APEX Accelerators</div><div class="ri-desc">Free federal procurement assistance. Virginia has several locations.</div></div><div class="ri-arrow">↗</div></a>
+          <a href="https://virginiaapex.org/" class="resource-item"><div class="ri-num">04</div><div><div class="ri-title">Virginia APEX Accelerator</div><div class="ri-desc">Free one-on-one counseling, proposal review, and bid matching across 8 Virginia offices including Richmond. SAM.gov help, SBIR proposal review, and teaming guidance — all at no cost. Primarily DoD-focused.</div></div><div class="ri-arrow">↗</div></a>
+          <a href="https://www.score.org/" class="resource-item"><div class="ri-num">04b</div><div><div class="ri-title">SCORE / SBDCs — Civilian pathway</div><div class="ri-desc">For companies pursuing civilian agencies (HHS, GSA, SBA, Commerce, Treasury): free counseling through SBA's SCORE network and Small Business Development Centers. Not DoD-specific — covers civilian federal contracting and general BD.</div></div><div class="ri-arrow">↗</div></a>
           <a href="https://www.acquisition.gov" class="resource-item"><div class="ri-num">05</div><div><div class="ri-title">Acquisition.gov</div><div class="ri-desc">The Federal Acquisition Regulation. Know the rulebook your buyers operate under.</div></div><div class="ri-arrow">↗</div></a>
           <a href="https://dcode.co/federal-accelerator" class="resource-item"><div class="ri-num">06</div><div><div class="ri-title">Dcode Federal Accelerator</div><div class="ri-desc">National 8-week program for companies ready to build a full federal GTM strategy. The logical next step after this workshop.</div></div><div class="ri-arrow">↗</div></a>
         </div>
@@ -1254,6 +1760,36 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
         <a href="https://dcode.co/federal-accelerator" class="dcode-link">Visit dcode.co &nbsp;↗</a>
       </div>
     </div>
+    <div class="dcode-journey">
+      <div class="dj-label">The journey from here</div>
+      <div class="dj-steps">
+        <div class="dj-step dj-current">
+          <div class="dj-dot dj-dot-current"></div>
+          <div class="dj-step-title">June 5 Orientation</div>
+          <div class="dj-step-sub">Is federal right for you? Free · 60 min</div>
+        </div>
+        <div class="dj-arrow">→</div>
+        <div class="dj-step">
+          <div class="dj-dot"></div>
+          <div class="dj-step-title">June 19 Workshop</div>
+          <div class="dj-step-sub">Pathway selection + prime network. Free · 4 hrs</div>
+        </div>
+        <div class="dj-arrow">→</div>
+        <div class="dj-step">
+          <div class="dj-dot"></div>
+          <div class="dj-step-title">Dcode Accelerator</div>
+          <div class="dj-step-sub">8-week federal GTM strategy. National program.</div>
+        </div>
+        <div class="dj-arrow">→</div>
+        <div class="dj-step dj-terminal">
+          <div class="dj-dot dj-dot-terminal"></div>
+          <div class="dj-step-title">First Federal Contract</div>
+          <div class="dj-step-sub">With past performance, relationships, and a real pathway.</div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -1274,6 +1810,53 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
       <div class="reg-seats">23 spots remaining</div>
       <button class="reg-btn" onclick="openRegModal('workshop')">Register now &nbsp;→</button>
     </div>
+  </div>
+</div>
+
+<!-- GOV AGENCY SECTION -->
+<div class="gov-section">
+  <div class="gov-inner">
+    <div class="gov-header">
+      <div>
+        <div class="gov-label">For government agencies</div>
+        <div class="gov-h">A better-qualified<br><strong>vendor pipeline</strong></div>
+        <div class="gov-intro">Program officers, contracting officers, OSBP teams, and small business specialists are welcome at Federal Market Ready. The companies leaving this workshop understand agency mission requirements, procurement timelines, and compliance obligations — before they contact you. This is training that benefits both sides of the procurement table.</div>
+      </div>
+      <div>
+        <div class="gov-grid">
+          <div class="gov-card">
+            <div class="gov-card-label">Industry days</div>
+            <div class="gov-card-title">Send your OSBP team</div>
+            <div class="gov-card-body">Meet companies you can invite to your next industry day or Sources Sought notice. Workshop attendees understand market research meetings — they'll come prepared and not waste your time.</div>
+          </div>
+          <div class="gov-card">
+            <div class="gov-card-label">Vendor quality</div>
+            <div class="gov-card-title">Compliance-literate founders</div>
+            <div class="gov-card-body">Companies are coached on FAR requirements, ATO timelines, FedRAMP pathways, and CMMC levels before pursuing contracts. Fewer disqualifications. Better proposals. Less friction.</div>
+          </div>
+          <div class="gov-card">
+            <div class="gov-card-label">Speak at a future session</div>
+            <div class="gov-card-title">Program officer perspective</div>
+            <div class="gov-card-body">The most valuable content we offer is direct agency voice. If you're willing to share what good vendor engagement looks like from your desk, we want to hear from you. No selling involved.</div>
+          </div>
+        </div>
+        <div class="gov-contact-bar">
+          <div class="gov-contact-text"><strong>Agency liaisons, OSBP teams, and program offices</strong> — connect directly with the Tech Next team about sending representatives or speaking at a future session.</div>
+          <a href="contact.html" class="gov-contact-cta">Contact Tech Next →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STAY INFORMED -->
+<div class="stay-informed-band">
+  <div class="si-inner">
+    <div class="si-text"><strong>Not ready to register yet?</strong> Stay informed — we'll send the pre-read, resource list, and future event dates.</div>
+    <form class="si-form" onsubmit="submitStayInformed(event)">
+      <input type="email" class="si-input" id="si-email" placeholder="your@email.com" required>
+      <button type="submit" class="si-btn">Stay informed →</button>
+    </form>
   </div>
 </div>
 
@@ -1581,6 +2164,15 @@ footer { background: #0E0218; padding: 32px 48px; display: flex; align-items: ce
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1v8M4 6l3 3 3-3"/><path d="M1 10v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1"/></svg>
         Download ticket (PDF)
       </button>
+      <div style="margin-top:24px; padding-top:20px; border-top:1px solid var(--on-primary-rule); text-align:left;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--on-primary-muted);margin-bottom:12px;">What happens next</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">01</span>Check your email — a confirmation with logistics details will arrive within 24 hours.</div>
+          <div style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">02</span>Complete the 5-minute readiness diagnostic before attending — <a href="federal-diagnostic.html" style="color:var(--orange);text-decoration:none;">take it here</a>. High scorers qualify for Golden Ticket status.</div>
+          <div style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">03</span>Virtual attendees (June 5 only): <a href="https://us06web.zoom.us/j/89234819047" target="_blank" style="color:var(--orange);text-decoration:none;">join via Zoom →</a> (link also in your confirmation email).</div>
+          <div style="font-size:13px;color:var(--on-primary-muted);display:flex;gap:10px;align-items:flex-start;"><span style="color:var(--orange);font-weight:700;flex-shrink:0;">04</span>Come prepared to discuss your company's domain, current runway, and any existing government exposure — even informal.</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -1634,6 +2226,58 @@ document.addEventListener('keydown', e => {
 // ── REGISTRATION MODAL ────────────────────────────────────
 let _regData = null;
 
+function ndFilter(type) {
+  document.querySelectorAll('.nd-toggle').forEach(t => t.classList.remove('active'));
+  document.getElementById('nd-toggle-' + type).classList.add('active');
+  document.querySelectorAll('.nd-track').forEach(track => {
+    track.classList.remove('dimmed','highlighted');
+    const t = track.getAttribute('data-track');
+    if (type === 'all') return;
+    if (t === 'defense') {
+      track.classList.add('dimmed');
+    } else if (t === type) {
+      track.classList.add('highlighted');
+    }
+  });
+}
+
+function showAudience(id, btn) {
+  document.querySelectorAll('.audience-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.audience-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('aud-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+function toggleMobileNav() {
+  document.getElementById('mobile-nav').classList.toggle('open');
+}
+
+function shareWorkshop(btn) {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg> Link copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="2" r="1.5"/><circle cx="9" cy="10" r="1.5"/><circle cx="2" cy="6" r="1.5"/><line x1="3.4" y1="6.7" x2="7.6" y2="9.3"/><line x1="7.6" y1="2.7" x2="3.4" y2="5.3"/></svg> Share with a founder';
+    }, 2500);
+  });
+}
+
+function toggleMobileNav() {
+  document.getElementById('mobile-nav').classList.toggle('open');
+}
+
+function shareWorkshop(btn) {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    btn.classList.add('copied');
+    btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 2.5"/></svg> Link copied!';
+    setTimeout(() => {
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="2" r="1.5"/><circle cx="9" cy="10" r="1.5"/><circle cx="2" cy="6" r="1.5"/><line x1="3.4" y1="6.7" x2="7.6" y2="9.3"/><line x1="7.6" y1="2.7" x2="3.4" y2="5.3"/></svg> Share with a founder';
+    }, 2500);
+  });
+}
+
 function openRegModal(session) {
   document.getElementById('reg-form-view').style.display = 'block';
   document.getElementById('reg-success').classList.remove('show');
@@ -1673,6 +2317,17 @@ function submitRegistration(e) {
     `Ticket: <strong>${_regData.ticket}</strong>`;
   document.getElementById('reg-form-view').style.display = 'none';
   document.getElementById('reg-success').classList.add('show');
+}
+
+function submitStayInformed(e) {
+  e.preventDefault();
+  const email = document.getElementById('si-email').value;
+  const btn = e.target.querySelector('.si-btn');
+  btn.textContent = 'You\'re on the list ✓';
+  btn.style.color = '#22c55e';
+  btn.style.borderColor = '#22c55e';
+  btn.disabled = true;
+  document.getElementById('si-email').value = '';
 }
 
 function downloadTicket() {
