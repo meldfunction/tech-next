@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>June 5 Orientation — Tech Next</title>
+<meta name="description" content="A free 60-minute orientation for Richmond-area founders considering government contracts. June 5, 2025 · 1717 Innovation Center or virtual · Honest and structured.">
+<meta property="og:title" content="June 5 Orientation — Tech Next">
+<meta property="og:description" content="A free 60-minute orientation for Richmond-area founders considering government contracts. June 5, 2025 · In-person or virtual.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="June 5 Orientation — Tech Next">
+<meta name="twitter:description" content="Free orientation for RVA founders considering government contracts. June 5 · 1717 Innovation Center or virtual.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231A0935'/><text x='6' y='24' font-size='22' font-family='sans-serif' font-weight='700' fill='%23F05537'>N</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Bricolage+Grotesque:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ─── DESIGN TOKENS ───────────────────────────────────────── */
+:root {
+  --navy:        #1A0935;
+  --orange:      #F05537;
+  --orange-dark: #C8391A;
+  --cream:       #F4F1EB;
+  --gray:        #6B6880;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+}
+
+/* ─── DARK THEME (DEFAULT) ────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-primary:        #1A0935;
+  --bg-mid:            #ffffff;
+  --bg-light:          #F4F1EB;
+  --bg-nav:            #1A0935;
+  --on-primary:        #ffffff;
+  --on-primary-muted:  rgba(255,255,255,0.55);
+  --on-primary-sub:    rgba(255,255,255,0.28);
+  --on-primary-rule:   rgba(255,255,255,0.11);
+  --on-mid:            #1A0935;
+  --on-mid-muted:      #6B6880;
+  --on-mid-rule:       rgba(26,9,53,0.11);
+  --on-light:          #1A0935;
+  --on-light-muted:    #6B6880;
+  --on-light-rule:     #DDD9CF;
+  --nav-text:          rgba(255,255,255,0.5);
+  --nav-rule:          rgba(255,255,255,0.11);
+  --card-bg:           rgba(255,255,255,0.05);
+  --card-border:       rgba(255,255,255,0.1);
+  --card-hover:        rgba(255,255,255,0.08);
+  --agenda-accent:     var(--orange);
+  --agenda-line:       rgba(255,255,255,0.1);
+  --input-bg:          rgba(255,255,255,0.06);
+  --input-border:      rgba(255,255,255,0.15);
+  --input-border-focus: var(--orange);
+  --input-text:        #ffffff;
+  --input-placeholder: rgba(255,255,255,0.35);
+  --next-card-bg:      rgba(255,255,255,0.06);
+  --next-card-border:  rgba(255,255,255,0.12);
+}
+
+/* ─── LIGHT THEME ─────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-primary:        #EDEAE4;
+  --bg-mid:            #ffffff;
+  --bg-light:          #F4F1EB;
+  --bg-nav:            #ffffff;
+  --on-primary:        #1A0935;
+  --on-primary-muted:  rgba(26,9,53,0.6);
+  --on-primary-sub:    rgba(26,9,53,0.38);
+  --on-primary-rule:   rgba(26,9,53,0.1);
+  --on-mid:            #1A0935;
+  --on-mid-muted:      #6B6880;
+  --on-mid-rule:       rgba(26,9,53,0.1);
+  --on-light:          #1A0935;
+  --on-light-muted:    #6B6880;
+  --on-light-rule:     #DDD9CF;
+  --nav-text:          rgba(26,9,53,0.55);
+  --nav-rule:          rgba(26,9,53,0.1);
+  --card-bg:           rgba(26,9,53,0.04);
+  --card-border:       rgba(26,9,53,0.1);
+  --card-hover:        rgba(26,9,53,0.07);
+  --agenda-accent:     var(--orange);
+  --agenda-line:       rgba(26,9,53,0.1);
+  --input-bg:          #ffffff;
+  --input-border:      rgba(26,9,53,0.15);
+  --input-border-focus: var(--orange);
+  --input-text:        #1A0935;
+  --input-placeholder: rgba(26,9,53,0.38);
+  --next-card-bg:      rgba(26,9,53,0.05);
+  --next-card-border:  rgba(26,9,53,0.12);
+}
+
+/* ─── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-mid);
+  color: var(--on-mid);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ─── NAV ─────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  background: var(--bg-nav);
+  border-bottom: 1px solid var(--nav-rule);
+  transition: background 0.3s, border-color 0.3s;
+}
+.nav-wordmark {
+  font-family: var(--font-display); font-weight: 700; font-size: 14px;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--on-primary); text-decoration: none;
+  transition: color 0.3s;
+}
+[data-theme="dark"] .nav-wordmark { color: #ffffff; }
+[data-theme="light"] .nav-wordmark { color: var(--on-mid); }
+.nav-wordmark span { color: var(--orange); }
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-back {
+  font-size: 13px; color: var(--nav-text); text-decoration: none;
+  letter-spacing: 0.02em; transition: color 0.2s;
+}
+.nav-back:hover { color: var(--orange); }
+.theme-toggle {
+  display: flex; align-items: center; gap: 7px;
+  background: none; border: 1px solid var(--nav-rule);
+  color: var(--nav-text); font-family: var(--font-body);
+  font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 2px; cursor: pointer;
+  transition: all 0.2s;
+}
+.theme-toggle:hover { border-color: var(--orange); color: var(--orange); }
+.theme-toggle-icon { width: 13px; height: 13px; flex-shrink: 0; }
+.nav-cta {
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  color: #ffffff; background: var(--orange);
+  padding: 7px 18px; border-radius: 2px; border: none;
+  cursor: pointer; letter-spacing: 0.02em; transition: background 0.15s;
+}
+.nav-cta:hover { background: var(--orange-dark); }
+
+/* ─── HERO ────────────────────────────────────────────────── */
+.hero {
+  background: var(--bg-primary);
+  padding: 130px 48px 100px;
+  min-height: 88vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.hero-bg-text {
+  position: absolute; top: 50%; right: -20px;
+  transform: translateY(-50%);
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(120px, 16vw, 260px); line-height: 1;
+  color: rgba(255,255,255,0.028); pointer-events: none; user-select: none;
+  white-space: nowrap;
+}
+[data-theme="light"] .hero-bg-text { color: rgba(26,9,53,0.04); }
+.hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+.hero-overline {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 36px;
+}
+.hero-overline-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); flex-shrink: 0; }
+.hero-overline-text {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange);
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 7vw, 96px); font-weight: 300; line-height: 1.0;
+  color: var(--on-primary); letter-spacing: -0.02em; margin-bottom: 28px;
+}
+.hero-subtitle {
+  font-size: clamp(16px, 2vw, 20px); font-weight: 300;
+  color: var(--on-primary-muted); line-height: 1.65;
+  max-width: 680px; margin-bottom: 52px;
+}
+.hero-meta-bar {
+  display: flex; align-items: stretch; gap: 0;
+  border-top: 1px solid var(--on-primary-rule);
+  padding-top: 32px; margin-bottom: 40px;
+  flex-wrap: wrap; row-gap: 24px;
+}
+.hero-meta-item {
+  display: flex; flex-direction: column; gap: 5px;
+  padding-right: 44px; margin-right: 44px;
+  border-right: 1px solid var(--on-primary-rule);
+}
+.hero-meta-item:last-of-type { border-right: none; margin-right: 0; padding-right: 0; }
+.hero-meta-label {
+  font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--on-primary-sub); font-weight: 500;
+}
+.hero-meta-value { font-size: 14px; color: var(--on-primary); line-height: 1.4; }
+.hero-ctas { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
+.hero-cta-primary {
+  display: inline-flex; align-items: center;
+  background: var(--orange); color: #ffffff;
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 15px 30px; border-radius: 2px; text-decoration: none;
+  transition: background 0.15s; border: none; cursor: pointer;
+}
+.hero-cta-primary:hover { background: var(--orange-dark); }
+.hero-cta-secondary {
+  font-size: 14px; color: var(--on-primary-muted); text-decoration: none;
+  border-bottom: 1px solid var(--on-primary-rule);
+  padding-bottom: 2px; transition: color 0.2s, border-color 0.2s;
+}
+.hero-cta-secondary:hover { color: var(--orange); border-color: var(--orange); }
+
+/* ─── SECTION CONTAINERS ──────────────────────────────────── */
+.section-light {
+  padding: 120px 48px;
+  background: var(--bg-light);
+  transition: background 0.3s;
+}
+.section-mid {
+  padding: 120px 48px;
+  background: var(--bg-mid);
+  transition: background 0.3s;
+}
+.section-primary {
+  padding: 120px 48px;
+  background: var(--bg-primary);
+  transition: background 0.3s;
+}
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.overline {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--orange);
+  display: block; margin-bottom: 18px;
+}
+.section-h2 {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 52px); font-weight: 300; line-height: 1.1;
+  letter-spacing: -0.02em; margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 16px; color: var(--on-light-muted); line-height: 1.6;
+  margin-bottom: 64px;
+}
+.section-primary .section-h2 { color: var(--on-primary); }
+.section-primary .section-sub { color: var(--on-primary-muted); }
+.section-light .section-h2  { color: var(--on-light); }
+.section-light .section-sub  { color: var(--on-light-muted); }
+.section-mid  .section-h2  { color: var(--on-mid); }
+.section-mid  .section-sub  { color: var(--on-mid-muted); }
+
+/* ─── OUTCOMES ────────────────────────────────────────────── */
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.outcome-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  padding: 36px 32px;
+  transition: background 0.2s;
+}
+.outcome-card:hover { background: var(--card-hover); }
+.outcome-num {
+  font-family: var(--font-display); font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 20px; display: block;
+}
+.outcome-title {
+  font-family: var(--font-display); font-size: 22px; font-weight: 600;
+  line-height: 1.2; letter-spacing: -0.01em;
+  color: var(--on-light); margin-bottom: 14px;
+}
+.outcome-body {
+  font-size: 15px; color: var(--on-light-muted); line-height: 1.65;
+}
+
+/* ─── AGENDA ──────────────────────────────────────────────── */
+.agenda-list { display: flex; flex-direction: column; gap: 0; }
+.agenda-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0 40px;
+  border-left: 3px solid var(--agenda-line);
+  padding: 32px 0 32px 40px;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.agenda-item::before {
+  content: '';
+  position: absolute; left: -7px; top: 36px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--agenda-line);
+  border: 2px solid var(--bg-mid);
+  transition: background 0.2s, border-color 0.2s;
+}
+.section-mid .agenda-item::before { border-color: var(--bg-mid); }
+.agenda-item:hover { border-color: var(--orange); }
+.agenda-item:hover::before { background: var(--orange); }
+.agenda-time-col { display: flex; flex-direction: column; gap: 8px; padding-top: 2px; }
+.agenda-time {
+  font-family: var(--font-display); font-size: 13px; font-weight: 600;
+  color: var(--on-mid); letter-spacing: 0.01em; white-space: nowrap;
+}
+.agenda-duration {
+  display: inline-block;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--orange);
+  background: rgba(240,85,55,0.1);
+  padding: 3px 9px; border-radius: 2px; width: fit-content;
+}
+.agenda-content-col {}
+.agenda-title {
+  font-family: var(--font-display); font-size: 20px; font-weight: 600;
+  color: var(--on-mid); letter-spacing: -0.01em; margin-bottom: 8px;
+  line-height: 1.2;
+}
+.agenda-body {
+  font-size: 15px; color: var(--on-mid-muted); line-height: 1.65;
+}
+
+/* ─── WHAT'S NEXT (PRIMARY / DARK) ───────────────────────── */
+.next-card {
+  background: var(--next-card-bg);
+  border: 1px solid var(--next-card-border);
+  border-radius: 4px;
+  padding: 52px 56px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.next-card h3 {
+  font-family: var(--font-display); font-size: 34px; font-weight: 300;
+  color: var(--on-primary); letter-spacing: -0.02em; margin-bottom: 20px;
+}
+.next-card p {
+  font-size: 16px; color: var(--on-primary-muted); line-height: 1.7;
+  margin-bottom: 32px;
+}
+.next-card-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--orange); text-decoration: none; font-weight: 500;
+  font-size: 15px; letter-spacing: 0.01em;
+  border-bottom: 1px solid rgba(240,85,55,0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+  margin-bottom: 24px;
+}
+.next-card-link:hover { border-color: var(--orange); }
+.next-card-details {
+  font-size: 13px; color: var(--on-primary-sub); letter-spacing: 0.02em;
+}
+
+/* ─── REGISTRATION ────────────────────────────────────────── */
+.reg-form-wrap {
+  max-width: 560px;
+  margin: 0 auto;
+}
+.reg-sub {
+  font-size: 15px; color: var(--on-light-muted);
+  margin-bottom: 48px; line-height: 1.6;
+}
+.reg-form { display: flex; flex-direction: column; gap: 20px; }
+.form-field { display: flex; flex-direction: column; gap: 7px; }
+.form-label {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--on-light-muted);
+}
+.form-input {
+  font-family: var(--font-body); font-size: 15px;
+  background: var(--input-bg); color: var(--input-text);
+  border: 1px solid var(--input-border); border-radius: 2px;
+  padding: 13px 16px; outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+}
+.form-input::placeholder { color: var(--input-placeholder); }
+.form-input:focus { border-color: var(--input-border-focus); }
+.radio-group { display: flex; gap: 0; }
+.radio-option {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px;
+  font-size: 14px; color: var(--on-light-muted);
+  border: 1px solid var(--input-border);
+  padding: 12px 20px; cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+.radio-option:first-child { border-radius: 2px 0 0 2px; }
+.radio-option:last-child  { border-radius: 0 2px 2px 0; border-left: none; }
+.radio-option input[type="radio"] { display: none; }
+.radio-option:has(input:checked) {
+  background: rgba(240,85,55,0.1); border-color: var(--orange);
+  color: var(--on-light);
+}
+.radio-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  border: 2px solid currentColor; flex-shrink: 0;
+  transition: background 0.15s;
+}
+.radio-option:has(input:checked) .radio-dot { background: var(--orange); border-color: var(--orange); }
+.form-submit {
+  font-family: var(--font-body); font-size: 14px; font-weight: 500;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: #ffffff; background: var(--orange);
+  border: none; border-radius: 2px;
+  padding: 16px 32px; cursor: pointer;
+  transition: background 0.15s; margin-top: 8px;
+  width: 100%;
+}
+.form-submit:hover { background: var(--orange-dark); }
+.form-note {
+  font-size: 13px; color: var(--on-light-muted);
+  margin-top: 16px; line-height: 1.55;
+}
+.reg-success {
+  display: none;
+  text-align: center;
+  padding: 56px 32px;
+  border: 1px solid var(--on-light-rule);
+  border-radius: 4px;
+  background: var(--card-bg);
+}
+.reg-success-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(240,85,55,0.1);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px;
+}
+.reg-success h3 {
+  font-family: var(--font-display); font-size: 24px; font-weight: 600;
+  color: var(--on-light); margin-bottom: 12px; letter-spacing: -0.01em;
+}
+.reg-success p {
+  font-size: 15px; color: var(--on-light-muted); line-height: 1.65;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--on-primary-rule);
+  padding: 48px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 24px;
+  transition: background 0.3s;
+}
+.footer-wordmark {
+  font-family: var(--font-display); font-size: 13px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--on-primary);
+}
+.footer-wordmark span { color: var(--orange); }
+.footer-links {
+  display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 13px; color: var(--on-primary-muted); text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--orange); }
+.footer-partner {
+  font-size: 12px; color: var(--on-primary-sub);
+  width: 100%;
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-back { display: none; }
+  .hero { padding: 100px 20px 72px; min-height: 0; }
+  .hero-bg-text { font-size: 120px; right: -10px; }
+  .hero-meta-bar { gap: 0; row-gap: 20px; }
+  .hero-meta-item {
+    padding-right: 20px; margin-right: 20px;
+    border-right: none;
+    width: 50%;
+  }
+  .hero-meta-item:nth-child(odd) {
+    border-right: 1px solid var(--on-primary-rule);
+  }
+  .hero-ctas { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .section-light, .section-mid, .section-primary { padding: 80px 20px; }
+  .outcomes-grid { grid-template-columns: 1fr; gap: 16px; }
+  .agenda-item {
+    grid-template-columns: 1fr;
+    padding-left: 28px;
+    gap: 12px;
+  }
+  .agenda-time-col { flex-direction: row; align-items: center; gap: 10px; }
+  .next-card { padding: 36px 28px; }
+  .reg-form-wrap { max-width: 100%; }
+  footer { padding: 40px 20px; flex-direction: column; align-items: flex-start; }
+  .footer-links { gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─── NAV ─────────────────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="nav-wordmark">Tech <span>Next</span></a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-back">← All events</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <svg class="theme-toggle-icon" id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <span class="theme-toggle-label">Light</span>
+    </button>
+    <button class="nav-cta" onclick="document.getElementById('reg').scrollIntoView({behavior:'smooth'})">Register free</button>
+  </div>
+</nav>
+
+<!-- ─── HERO ─────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg-text" aria-hidden="true">ORIENT</div>
+  <div class="hero-inner">
+    <div class="hero-overline">
+      <span class="hero-overline-dot"></span>
+      <span class="hero-overline-text">June 5, 2025 &nbsp;·&nbsp; Free &nbsp;·&nbsp; 60 Minutes</span>
+    </div>
+    <h1>Is Federal Market Entry Right for You?</h1>
+    <p class="hero-subtitle">A free 60-minute orientation for Richmond-area founders considering government contracts. Honest and structured — no sales pitch, no hype.</p>
+    <div class="hero-meta-bar">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Date</span>
+        <span class="hero-meta-value">Thursday, June 5, 2025</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Time</span>
+        <span class="hero-meta-value">12:00 – 1:00 PM ET</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Format</span>
+        <span class="hero-meta-value">In-person · 1717 Innovation Center, Richmond, VA · or virtual</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Cost</span>
+        <span class="hero-meta-value">Free · No prerequisite</span>
+      </div>
+    </div>
+    <div class="hero-ctas">
+      <button class="hero-cta-primary" onclick="document.getElementById('reg').scrollIntoView({behavior:'smooth'})">Register for the orientation →</button>
+      <a href="workshop.html" class="hero-cta-secondary">Can't make June 5? See the June 19 workshop →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OUTCOMES ──────────────────────────────────────────────── -->
+<section class="section-light">
+  <div class="section-inner">
+    <span class="overline">Outcomes</span>
+    <h2 class="section-h2">Clarity, not a sales pitch</h2>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <span class="outcome-num">01</span>
+        <h3 class="outcome-title">A clear answer</h3>
+        <p class="outcome-body">Yes or no on whether the federal market fits your company's current stage, technology, and runway. Not a generic "there's opportunity everywhere" answer.</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-num">02</span>
+        <h3 class="outcome-title">Your on-ramp, mapped</h3>
+        <p class="outcome-body">SBIR, 8(a), OTA, subcontract-first, or GSA Schedule — you'll know which applies to your company and what the first 90 days look like.</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-num">03</span>
+        <h3 class="outcome-title">A scored diagnostic</h3>
+        <p class="outcome-body">You'll complete the Federal Readiness Diagnostic during the session. Your score (1–30) determines whether the June 19 workshop is the right next step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AGENDA ────────────────────────────────────────────────── -->
+<section class="section-mid">
+  <div class="section-inner">
+    <span class="overline">Session agenda</span>
+    <h2 class="section-h2">60 minutes, structured</h2>
+    <p class="section-sub">12:00 PM – 1:00 PM ET &nbsp;·&nbsp; In-person and virtual</p>
+    <div class="agenda-list">
+
+      <div class="agenda-item">
+        <div class="agenda-time-col">
+          <span class="agenda-time">12:00 PM</span>
+          <span class="agenda-duration">5 min</span>
+        </div>
+        <div class="agenda-content-col">
+          <h3 class="agenda-title">Welcome &amp; the honest question</h3>
+          <p class="agenda-body">We open with the question most programs avoid: should your company pursue government contracts at all? Framework for making that decision without a consultant.</p>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time-col">
+          <span class="agenda-time">12:05 PM</span>
+          <span class="agenda-duration">20 min</span>
+        </div>
+        <div class="agenda-content-col">
+          <h3 class="agenda-title">Federal market reality check</h3>
+          <p class="agenda-body">How agencies actually buy. Why sales cycles are 18–36 months. What past performance means and why it's the biggest barrier. Three companies that failed and why.</p>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time-col">
+          <span class="agenda-time">12:25 PM</span>
+          <span class="agenda-duration">15 min</span>
+        </div>
+        <div class="agenda-content-col">
+          <h3 class="agenda-title">Your company through a federal lens</h3>
+          <p class="agenda-body">Live walkthrough of the Federal Readiness Diagnostic. Participants score their own companies in real time. Archetype reveal: Pathfinder, Scout, Wolf, Bison, or Eagle.</p>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time-col">
+          <span class="agenda-time">12:40 PM</span>
+          <span class="agenda-duration">15 min</span>
+        </div>
+        <div class="agenda-content-col">
+          <h3 class="agenda-title">The four on-ramps</h3>
+          <p class="agenda-body">SBIR/STTR for R&amp;D-stage companies. 8(a) for service firms. Subcontract-first for companies without past performance. GSA Schedule for mature commercial vendors. Which fits your stage.</p>
+        </div>
+      </div>
+
+      <div class="agenda-item">
+        <div class="agenda-time-col">
+          <span class="agenda-time">12:55 PM</span>
+          <span class="agenda-duration">5 min</span>
+        </div>
+        <div class="agenda-content-col">
+          <h3 class="agenda-title">Next steps &amp; open Q&amp;A</h3>
+          <p class="agenda-body">Who should attend June 19. Who should come back in six months. APEX Accelerator intro. Questions answered.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHAT'S NEXT ────────────────────────────────────────────── -->
+<section class="section-primary">
+  <div class="section-inner">
+    <span class="overline">What's next</span>
+    <div class="next-card">
+      <h3>Ready to go further?</h3>
+      <p>Founders who score 15+ on the diagnostic and want to build a real federal GTM strategy attend the June 19 half-day workshop. Four sessions, prime contractor network access, and a pathway-selection working session.</p>
+      <a href="workshop.html" class="next-card-link">See the June 19 workshop →</a>
+      <div class="next-card-details">June 19, 2025 &nbsp;·&nbsp; 9:00 AM – 1:00 PM ET &nbsp;·&nbsp; Virginia Bio+Tech Park &nbsp;·&nbsp; Free</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REGISTRATION ──────────────────────────────────────────── -->
+<section class="section-light" id="reg">
+  <div class="section-inner">
+    <div class="reg-form-wrap">
+      <span class="overline">Registration</span>
+      <h2 class="section-h2">Reserve your spot</h2>
+      <p class="reg-sub">25 participants · Peer conversation format · Confirmation sent within 24 hours</p>
+
+      <div id="reg-success" class="reg-success">
+        <div class="reg-success-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F05537" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3>You're registered</h3>
+        <p>Thanks — check your email for the Zoom link and pre-read. See you June 5.</p>
+      </div>
+
+      <form id="reg-form" class="reg-form" action="#" onsubmit="handleRegSubmit(event)">
+        <div class="form-field">
+          <label class="form-label" for="reg-name">Full name <span style="color:var(--orange)">*</span></label>
+          <input class="form-input" type="text" id="reg-name" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="reg-email">Email <span style="color:var(--orange)">*</span></label>
+          <input class="form-input" type="email" id="reg-email" name="email" placeholder="jane@company.com" autocomplete="email" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="reg-company">Company <span style="color:var(--orange)">*</span></label>
+          <input class="form-input" type="text" id="reg-company" name="company" placeholder="Acme Technologies" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Format preference</label>
+          <div class="radio-group">
+            <label class="radio-option">
+              <input type="radio" name="format" value="in-person" checked>
+              <span class="radio-dot"></span>
+              In-person
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="format" value="virtual">
+              <span class="radio-dot"></span>
+              Virtual
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">Register for June 5 →</button>
+        <p class="form-note">After registering, you'll receive the Zoom link and a short pre-read (15 minutes) by email.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-wordmark">Tech <span>Next</span> Program</div>
+  <div class="footer-links">
+    <a href="workshop.html">June 19 Workshop</a>
+    <a href="federal-diagnostic.html">Diagnostic</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="footer-partner">In partnership with Virginia APEX Accelerator &amp; SBA District Office</div>
+</footer>
+
+<script>
+/* ─── THEME TOGGLE ────────────────────────────────────────── */
+function toggleTheme() {
+  var html = document.documentElement;
+  var current = html.getAttribute('data-theme');
+  var next = current === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  updateThemeIcon(next);
+  try { localStorage.setItem('tn-theme', next); } catch(e) {}
+}
+
+function updateThemeIcon(theme) {
+  var icon = document.getElementById('theme-icon');
+  var label = document.querySelector('.theme-toggle-label');
+  if (theme === 'dark') {
+    icon.innerHTML = '<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>';
+    if (label) label.textContent = 'Light';
+  } else {
+    icon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>';
+    if (label) label.textContent = 'Dark';
+  }
+}
+
+/* ─── PERSIST THEME ───────────────────────────────────────── */
+(function() {
+  try {
+    var saved = localStorage.getItem('tn-theme');
+    if (saved && saved !== 'dark') {
+      document.documentElement.setAttribute('data-theme', saved);
+      updateThemeIcon(saved);
+    }
+  } catch(e) {}
+})();
+
+/* ─── REGISTRATION FORM ───────────────────────────────────── */
+function handleRegSubmit(e) {
+  e.preventDefault();
+  var form = document.getElementById('reg-form');
+  var success = document.getElementById('reg-success');
+  form.style.display = 'none';
+  success.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
